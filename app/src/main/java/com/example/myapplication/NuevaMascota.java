@@ -2,11 +2,15 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
+
+import com.example.myapplication.db.dbHelper;
 
 import java.util.UUID;
 
@@ -39,7 +43,14 @@ public class NuevaMascota extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
+            case (R.id.btGuardar):
+                dbHelper DbHelper= new dbHelper(this);
+                SQLiteDatabase db = DbHelper.getWritableDatabase();
+                if(db != null){
+                    Toast.makeText(this, "bd creada", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(this, "bd no creada", Toast.LENGTH_LONG).show();
+                }
         }
     }
 

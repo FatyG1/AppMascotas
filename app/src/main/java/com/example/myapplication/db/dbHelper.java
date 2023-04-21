@@ -30,6 +30,7 @@ public class dbHelper extends SQLiteOpenHelper {
     //MIN 7:43 Crear base de datos en Android Studio (SQLite)
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLA_MASCOTAS);
+        onCreate(sqLiteDatabase);
     }
 }
