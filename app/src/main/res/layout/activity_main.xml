@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#94F129"
+                android:fontFamily="cursive"
+                android:gravity="center"
+                android:text="@string/app_mascotas"
+                android:textColor="#673AB7"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/btMiMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="Mi mascota"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="158dp"
+                tools:layout_editor_absoluteY="108dp" />
+
+            <Button
+                android:id="@+id/btVacunacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="@string/vacunaci_n"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165" />
+
+            <Button
+                android:id="@+id/btDesparasitacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="@string/desparasitaci_n"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165" />
+
+            <Button
+                android:id="@+id/brTto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="@string/tratamiento"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165" />
+
+            <Button
+                android:id="@+id/btHistorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="@string/historial"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165" />
+
+            <Button
+                android:id="@+id/btAlimentacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="ALIMENTACIÓN"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165" />
+
+            <Button
+                android:id="@+id/btMiVet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="@string/mi_veterinario"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

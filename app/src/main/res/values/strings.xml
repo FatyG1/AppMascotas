@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">App Mascotas</string>
+    <string name="app_mascotas">APP MASCOTAS</string>
+    <string name="mi_mascota">Mi mascota</string>
+    <string name="vacunaci_n">Vacunación</string>
+    <string name="desparasitaci_n">Desparasitación</string>
+    <string name="tratamiento">Tratamiento</string>
+    <string name="historial">Historial</string>
+    <string name="mi_veterinario">Mi veterinario</string>
+    <string name="vacunacion">VACUNACION</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
