@@ -19,8 +19,8 @@ public class dbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_MASCOTAS + "(" +
-                "chip TEXT PRIMARY KEY," +
-                "nombre TEXT NOT NULL," +
+                "nombre TEXT PRIMARY KEY," +
+                "chip TEXT," +
                 "edad TEXT," +
                 "peso TEXT," +
                 "raza TEXT," +

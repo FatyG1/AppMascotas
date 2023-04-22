@@ -112,11 +112,19 @@
                 android:text="Sexo:"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
+            <EditText
+                android:id="@+id/etSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Hembra/macho"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:orientation="horizontal">
 
                 <RadioButton
@@ -149,6 +157,17 @@
                 android:text="Esterilizado/a"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEsterilizado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Si/no"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <RadioGroup
                 android:layout_width="wrap_content"
@@ -198,7 +217,7 @@
                 android:layout_marginTop="5px"
                 android:ems="10"
                 android:hint="15kg"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:minHeight="48dp" />
 
             <LinearLayout
