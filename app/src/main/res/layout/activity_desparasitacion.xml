@@ -32,6 +32,16 @@
             android:text="Tipo de desparasitación:"
             android:textSize="20sp"
             android:textStyle="bold" />
+        <EditText
+            android:id="@+id/etTipoDesp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:ems="10"
+            android:hint="Interna/externa"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <RadioGroup
             android:layout_width="wrap_content"
