@@ -10,15 +10,19 @@ public class dbHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NOMBRE = "mascota.db";
     public static final String TABLA_MASCOTAS ="datos_mascota";
+    public static final String TABLA_DESP = "Desparasitacion";
+    public static final String TABLA_TTO = "Tratamiento";
+    public static final String TABLA_ALIMEN = "Alimentación";
+    public static final String TABLA_VAC = "Vacunación";
 
 
     public dbHelper(@Nullable Context context ) {
-        super(context, DATABASE_NOMBRE, null, DATABASE_VERSION );
+       super(context, DATABASE_NOMBRE, null, DATABASE_VERSION );
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_MASCOTAS + "(" +
+       sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_MASCOTAS + "(" +
                 "nombre TEXT PRIMARY KEY," +
                 "chip TEXT," +
                 "edad TEXT," +
@@ -26,11 +30,28 @@ public class dbHelper extends SQLiteOpenHelper {
                 "raza TEXT," +
                 "sexo TEXT," +
                 "esterilizado TEXT)");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_DESP + "(" +
+                "nombreDesp TEXT PRIMARY KEY," +
+                "tipoDesp TEXT," +
+                "dosisDesp TEXT," +
+                "frecuenciaDesp TEXT)");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_TTO + "(" +
+                "nombreTto TEXT PRIMARY KEY," +
+                "usoTto TEXT," +
+                "dosisTto TEXT," +
+                "frecuenciaTto TEXT," +
+                "DuracionTto TEXT)");
     }
-    //MIN 7:43 Crear base de datos en Android Studio (SQLite)
+
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE " + TABLA_MASCOTAS);
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLA_DESP);
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLA_TTO);
         onCreate(sqLiteDatabase);
     }
+
+
 }
