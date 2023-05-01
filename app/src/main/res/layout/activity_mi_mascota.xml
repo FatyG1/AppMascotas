@@ -28,6 +28,11 @@
         android:textSize="45sp"
         android:textStyle="bold" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rwMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/btNueva"
         android:layout_width="wrap_content"

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textColor="#8BC34A"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvChip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chip"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvEdad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edad"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvRazaLm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Raza"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexo"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvEsterilizado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Esterilizado"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvVacuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vacuna"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvFechaproxVac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fecha prox vac"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDesp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha prox desp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tratamiento"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvAlimentacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alimentacion"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

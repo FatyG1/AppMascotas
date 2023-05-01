@@ -2,9 +2,12 @@ package com.example.myapplication.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
+import com.example.myapplication.miMascota;
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
 
 public class dbMascota extends dbHelper{
     Context context;
@@ -112,5 +115,34 @@ public class dbMascota extends dbHelper{
             ex.toString();
         }
         return id;
+    }
+
+    public ArrayList<miMascota> mostrarMascotas(){
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        ArrayList<miMascota> listaMascotas = new ArrayList<>();
+        miMascota mascota = null;
+        Cursor cursorMascotas = null;
+
+        cursorMascotas = db.rawQuery("SELECT * FROM " + TABLA_MASCOTAS, null);
+
+        if(cursorMascotas.moveToFirst()){
+            do{
+                mascota = new miMascota();
+                mascota.setNombre(cursorMascotas.getString(0));
+                mascota.setChip(cursorMascotas.getString(1));
+                mascota.setEdad(cursorMascotas.getString(2));
+                mascota.setRaza(cursorMascotas.getString(3));
+                mascota.setPeso(cursorMascotas.getString(4));
+                mascota.setSexo(cursorMascotas.getString(5));
+
+                listaMascotas.add(mascota);
+            }while(cursorMascotas.moveToNext());
+        }
+
+        cursorMascotas.close();
+
+        return listaMascotas;
     }
 }
