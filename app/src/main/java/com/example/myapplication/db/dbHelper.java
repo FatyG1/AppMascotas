@@ -32,24 +32,44 @@ public class dbHelper extends SQLiteOpenHelper {
                 "esterilizado TEXT)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_DESP + "(" +
+                "etNombreMascota TEXT, " +
                 "nombreDesp TEXT PRIMARY KEY," +
                 "tipoDesp TEXT," +
                 "dosisDesp TEXT," +
                 "frecuenciaDesp TEXT)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_TTO + "(" +
+                "etNombreMascota TEXT, " +
                 "nombreTto TEXT PRIMARY KEY," +
                 "usoTto TEXT," +
                 "dosisTto TEXT," +
                 "frecuenciaTto TEXT," +
                 "DuracionTto TEXT)");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_ALIMEN + "(" +
+                "etNombreMascota TEXT, " +
+                "nombreAlimen TEXT PRIMARY KEY," +
+                "cantidadAlimen TEXT," +
+                "tomasAlimen TEXT," +
+                "tipoAlimen TEXT)");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_VAC + "(" +
+                "etNombreMascota TEXT, " +
+                "nombreVac TEXT PRIMARY KEY," +
+                "frecuenciaVac TEXT," +
+                "fechavac TEXT," +
+                "fechaProxVac TEXT)");
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE " + TABLA_MASCOTAS);
         sqLiteDatabase.execSQL("DROP TABLE " + TABLA_DESP);
         sqLiteDatabase.execSQL("DROP TABLE " + TABLA_TTO);
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLA_ALIMEN);
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLA_VAC);
         onCreate(sqLiteDatabase);
     }
 

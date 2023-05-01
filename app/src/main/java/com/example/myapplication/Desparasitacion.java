@@ -17,7 +17,7 @@ import com.example.myapplication.db.dbMascota;
 
 public class Desparasitacion extends AppCompatActivity implements View.OnClickListener{
 
-        private EditText etNombreDesp, etDosisDesp, etFrecuenciaDesp, etTipoDesp;
+        private EditText etNombreMascota, etNombreDesp, etDosisDesp, etFrecuenciaDesp, etTipoDesp;
         private Button btInsertarDesp;
 
    // @SuppressLint("MissingInflatedId")
@@ -26,6 +26,7 @@ public class Desparasitacion extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desparasitacion);
 
+        etNombreMascota = findViewById(R.id.etNombreMascota);
         etNombreDesp = findViewById(R.id.etNombreDesp);
         etDosisDesp = findViewById(R.id.etDosisDesp);
         etFrecuenciaDesp = findViewById(R.id.etFrecuenciaDesp);
@@ -43,28 +44,24 @@ public class Desparasitacion extends AppCompatActivity implements View.OnClickLi
                 //crea la bd
                 dbHelper DbHelper= new dbHelper(this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
-                if(db != null){
-                    Toast.makeText(this, "Mascota creada", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(this, "La mascota no se ha podido crear", Toast.LENGTH_LONG).show();
-                }
 
                 // Inserta datos
                 dbMascota DbMascotas = new dbMascota(this);
-                long id = DbMascotas.insertarDesp(etNombreDesp.getText().toString(), etDosisDesp.getText().toString(), etFrecuenciaDesp.getText().toString(),
+                long id = DbMascotas.insertarDesp(etNombreMascota.getText().toString(), etNombreDesp.getText().toString(), etDosisDesp.getText().toString(), etFrecuenciaDesp.getText().toString(),
                         etTipoDesp.getText().toString());
 
                 if (id > 0) {
-                    Toast.makeText(this, "Desp guardada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Desparasitación guardada", Toast.LENGTH_LONG).show();
                     limpiar();
                 } else {
-                    Toast.makeText(this, "Error al guardar la desp", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Error al guardar la desparasitación", Toast.LENGTH_LONG).show();
                 }
                 break;
         }
  }
 
     private void limpiar(){
+        etNombreMascota.setText("");
         etNombreDesp.setText("");
         etDosisDesp.setText("");
         etFrecuenciaDesp.setText("");

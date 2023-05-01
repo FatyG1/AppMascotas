@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".Alimentacion">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,7 +30,47 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvTipo"
+            android:id="@+id/tvNombreMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:text="Nombre/marca:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etNombreMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:ems="10"
+            android:hint="Sirio, Dama, Nemo, Gromit..."
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tvNombreAlimen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:text="Nombre/marca:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etNombreAlimen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:ems="10"
+            android:hint="Casera, hills..."
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tvTipoAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
@@ -35,7 +79,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etTipo"
+            android:id="@+id/etTipoAlimen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
@@ -46,7 +90,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/tvCantidad"
+            android:id="@+id/tvCantidadAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
@@ -55,7 +99,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etCantidad"
+            android:id="@+id/etCantidadAlimen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
@@ -66,7 +110,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/tvTomas"
+            android:id="@+id/tvTomasAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
@@ -75,7 +119,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etTomas"
+            android:id="@+id/etTomasAlimen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
@@ -86,7 +130,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/btinsertar"
+            android:id="@+id/btinsertarAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -101,5 +145,5 @@
             tools:layout_editor_absoluteX="158dp"
             tools:layout_editor_absoluteY="108dp" />
     </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>

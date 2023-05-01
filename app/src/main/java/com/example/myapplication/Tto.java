@@ -14,7 +14,7 @@ import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
 
 public class Tto extends AppCompatActivity implements View.OnClickListener {
-    private EditText etNombreTto, etDosisTto, etFrecuenciaTto, etUsoTto, etDuracionTto;
+    private EditText etNombreMascota, etNombreTto, etDosisTto, etFrecuenciaTto, etUsoTto, etDuracionTto;
     private Button btInsertarTto;
 
     @SuppressLint("MissingInflatedId")
@@ -23,6 +23,7 @@ public class Tto extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tto);
 
+        etNombreMascota = findViewById(R.id.etNombreMascota);
         etNombreTto = findViewById(R.id.etNombreTto);
         etDosisTto = findViewById(R.id.etDosisTto);
         etFrecuenciaTto = findViewById(R.id.etFrecuenciaTto);
@@ -40,15 +41,10 @@ public class Tto extends AppCompatActivity implements View.OnClickListener {
                 //crea la bd
                 dbHelper DbHelper= new dbHelper(this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
-                if(db != null){
-                    Toast.makeText(this, "Mascota creada", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(this, "La mascota no se ha podido crear", Toast.LENGTH_LONG).show();
-                }
 
                 // Inserta datos
                 dbMascota DbMascotas = new dbMascota(this);
-                long id = DbMascotas.insertarTto(etNombreTto.getText().toString(), etDosisTto.getText().toString(), etFrecuenciaTto.getText().toString(),
+                long id = DbMascotas.insertarTto(etNombreMascota.getText().toString(), etNombreTto.getText().toString(), etDosisTto.getText().toString(), etFrecuenciaTto.getText().toString(),
                         etUsoTto.getText().toString(), etDuracionTto.getText().toString());
 
                 if (id > 0) {
@@ -61,6 +57,7 @@ public class Tto extends AppCompatActivity implements View.OnClickListener {
         }
     }
     private void limpiar(){
+        etNombreMascota.setText("");
         etNombreTto.setText("");
         etDosisTto.setText("");
         etFrecuenciaTto.setText("");

@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.EditText;
 
 public class Historial extends AppCompatActivity implements View.OnClickListener{
-    private EditText mlHistorial;
+    private EditText etNombreMascota, mlHistorial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial);
 
+        etNombreMascota= findViewById(R.id.etNombreMascota);
         mlHistorial = findViewById(R.id.mlHistorial);
     }
 

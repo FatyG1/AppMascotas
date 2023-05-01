@@ -6,17 +6,144 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Vacunacion">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="98dp"
-        android:background="#94F129"
-        android:fontFamily="cursive"
-        android:gravity="center"
-        android:text="VACUNACION"
-        android:textColor="#673AB7"
-        android:textSize="45sp"
-        android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20px"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    android:background="#94F129"
+                    android:fontFamily="cursive"
+                    android:gravity="center"
+                    android:text="VACUNACION"
+                    android:textColor="#673AB7"
+                    android:textSize="45sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNombreMascota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:text="Nombre/marca:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etNombreMascota"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5px"
+                    android:ems="10"
+                    android:hint="Sirio, Dama, Nemo, Gromit..."
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/tvNombreVac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:text="Nombre de la vacuna:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etNombreVac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5px"
+                    android:ems="10"
+                    android:hint="Rabia, Polivalente..."
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/tvFrecuenciaVac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:text="Frecuencia vacunación:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etFrecuenciaVac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5px"
+                    android:ems="10"
+                    android:hint="1 vez al año"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/tvFechaVac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:text="Fecha de la vacunación:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etFechaVac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5px"
+                    android:ems="10"
+                    android:hint="10/10/24"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/tvFechaProxVac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:text="Fecha de la próxima vacuna:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etFechaProxVac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5px"
+                    android:ems="10"
+                    android:hint="10/10/25"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <Button
+                    android:id="@+id/btInsertarVac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="0px"
+                    android:layout_marginLeft="0px"
+                    android:layout_marginTop="20px"
+                    android:text="Añadir vacunación"
+                    android:textColor="#BD1CD8"
+                    android:textSize="24sp"
+                    app:backgroundTint="#5EF165"
+                    tools:ignore="TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="158dp"
+                    tools:layout_editor_absoluteY="108dp" />
+
+            </LinearLayout>
+        </ScrollView>
 </LinearLayout>

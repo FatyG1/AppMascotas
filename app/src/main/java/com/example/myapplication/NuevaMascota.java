@@ -50,13 +50,8 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
                 //crea la bd
                 dbHelper DbHelper= new dbHelper(this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
-                if(db != null){
-                    Toast.makeText(this, "Mascota creada", Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(this, "La mascota no se ha podido crear", Toast.LENGTH_LONG).show();
-                }
 
-                    // Inserta datos
+                // Inserta datos
                 dbMascota DbMascotas = new dbMascota(this);
                 long id= DbMascotas.insertarMascota(etNombre.getText().toString(), etChip.getText().toString(), etEdad.getText().toString(),
                         etRaza.getText().toString(), etPeso.getText().toString(), etSexo.getText().toString(), etEsterilizado.getText().toString());

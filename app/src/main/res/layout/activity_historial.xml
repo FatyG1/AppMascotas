@@ -25,6 +25,26 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvNombreMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:text="Nombre/marca:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etNombreMascota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:ems="10"
+            android:hint="Sirio, Dama, Nemo, Gromit..."
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
             android:id="@+id/tvAñadir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
