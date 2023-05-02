@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class miMascota extends AppCompatActivity implements View.OnClickListener{
     private Button btNueva;
     private RecyclerView rwMascota;
+
     private ArrayList<miMascota> listaArraymascotas;
     private String nombre;
     private String chip;
@@ -62,6 +63,7 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+    //Creación de getter y setter.
     public Button getBtNueva() {
         return btNueva;
     }

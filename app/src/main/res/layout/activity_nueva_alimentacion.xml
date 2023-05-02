@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btInsertar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Desparasitacion">
+    tools:context=".NuevaAlimentacion">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,16 +14,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="20px"
         android:orientation="vertical">
 
-       <TextView
+        <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="#94F129"
             android:fontFamily="cursive"
             android:gravity="center"
-            android:text="DESPARASITACION"
+            android:text="ALIMENTACIÓN"
             android:textColor="#673AB7"
             android:textSize="45sp"
             android:textStyle="bold" />
@@ -33,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
-            android:text="Nombre/marca:"
+            android:text="Nombre mascota:"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -49,124 +50,94 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/tvTipoDesp"
+            android:id="@+id/tvNombreAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
-            android:text="Tipo de desparasitación:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <EditText
-            android:id="@+id/etTipoDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="Interna/externa"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rbInterna"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:checked="false"
-                android:text="Interna"
-                android:textSize="20sp" />
-
-            <RadioButton
-                android:id="@+id/rbExterna"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:checked="true"
-                android:text="Externa"
-                android:textSize="20sp" />
-
-        </RadioGroup>
-        <TextView
-            android:id="@+id/tvNombreDesp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Nombre del tratamiento antiparasitario:"
+            android:text="Nombre/marca:"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etNombreDesp"
+            android:id="@+id/etNombreAlimen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
             android:ems="10"
-            android:hint="Seresto, Milbemax..."
+            android:hint="Casera, hills..."
             android:inputType="textPersonName"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/tvDosis"
+            android:id="@+id/tvTipoAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
-            android:text="Dosis:"
+            android:text="Tipo:"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etDosisDesp"
+            android:id="@+id/etTipoAlimen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
             android:ems="10"
-            android:hint="1 comprimido"
+            android:hint="Pienso, lata..."
             android:inputType="textPersonName"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/tvFrecuencia"
+            android:id="@+id/tvCantidadAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
-            android:text="Frecuencia tratamiento antiparasitario:"
+            android:text="Cantidad por toma:"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etFrecuenciaDesp"
+            android:id="@+id/etCantidadAlimen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5px"
             android:ems="10"
-            android:hint="3 meses"
+            android:hint="150gr"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tvTomasAlimen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:text="Tomas al día:"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etTomasAlimen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5px"
+            android:ems="10"
+            android:hint="2"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/btInsertarDesp"
+            android:id="@+id/btinsertarAlimen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="0px"
             android:layout_marginLeft="0px"
             android:layout_marginTop="20px"
-            android:text="Añadir desparasitación"
+            android:text="Añadir"
             android:textColor="#BD1CD8"
             android:textSize="24sp"
             app:backgroundTint="#5EF165"

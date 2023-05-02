@@ -19,7 +19,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public dbHelper(@Nullable Context context ) {
        super(context, DATABASE_NOMBRE, null, DATABASE_VERSION );
     }
-
+    //Creación de tablas
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_MASCOTAS + "(" +
@@ -32,14 +32,14 @@ public class dbHelper extends SQLiteOpenHelper {
                 "esterilizado TEXT)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_DESP + "(" +
-                "etNombreMascota TEXT, " +
+                "nombreMascota TEXT, " +
                 "nombreDesp TEXT PRIMARY KEY," +
                 "tipoDesp TEXT," +
                 "dosisDesp TEXT," +
                 "frecuenciaDesp TEXT)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_TTO + "(" +
-                "etNombreMascota TEXT, " +
+                "nombreMascota TEXT, " +
                 "nombreTto TEXT PRIMARY KEY," +
                 "usoTto TEXT," +
                 "dosisTto TEXT," +
@@ -47,21 +47,19 @@ public class dbHelper extends SQLiteOpenHelper {
                 "DuracionTto TEXT)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_ALIMEN + "(" +
-                "etNombreMascota TEXT, " +
+                "nombreMascota TEXT, " +
                 "nombreAlimen TEXT PRIMARY KEY," +
                 "cantidadAlimen TEXT," +
                 "tomasAlimen TEXT," +
                 "tipoAlimen TEXT)");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_VAC + "(" +
-                "etNombreMascota TEXT, " +
+                "nombreMascota TEXT, " +
                 "nombreVac TEXT PRIMARY KEY," +
                 "frecuenciaVac TEXT," +
                 "fechavac TEXT," +
                 "fechaProxVac TEXT)");
     }
-
-
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

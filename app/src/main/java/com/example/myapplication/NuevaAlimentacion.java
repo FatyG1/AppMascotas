@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
 
-public class Alimentacion extends AppCompatActivity implements View.OnClickListener {
+public class NuevaAlimentacion extends AppCompatActivity implements View.OnClickListener {
     private EditText etNombreMascota, etNombreAlimen, etTipoAlimen, etCantidadAlimen, etTomasAlimen;
     private Button btInsertarAlimen;
 
@@ -21,7 +21,7 @@ public class Alimentacion extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alimentacion);
+        setContentView(R.layout.activity_nueva_alimentacion);
 
         etNombreMascota = findViewById(R.id.etNombreMascota);
         etNombreAlimen = findViewById(R.id.etNombreAlimen);

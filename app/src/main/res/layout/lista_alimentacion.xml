@@ -33,13 +33,13 @@
                     android:layout_height="wrap_content"
                     android:textColor="#673AB7"
                     android:textSize="16sp"
-                    android:text="CHIP:   " />
+                    android:text="Nombre/marca   " />
 
                 <TextView
-                    android:id="@+id/tvChip"
+                    android:id="@+id/tvNombreAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Chip"
+                    android:text="marca"
                     android:textSize="14sp" />
             </TableRow>
 
@@ -53,13 +53,13 @@
                     android:layout_height="wrap_content"
                     android:textColor="#673AB7"
                     android:textSize="16sp"
-                    android:text="Edad:   " />
+                    android:text="Tipo:   " />
 
                 <TextView
-                    android:id="@+id/tvEdad"
+                    android:id="@+id/tvTipoAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Edad"
+                    android:text="Tipo"
                     android:textSize="14sp" />
             </TableRow>
 
@@ -73,13 +73,13 @@
                     android:layout_height="wrap_content"
                     android:textColor="#673AB7"
                     android:textSize="16sp"
-                    android:text="Raza:   " />
+                    android:text="Cantidad:   " />
 
                 <TextView
-                    android:id="@+id/tvRazaLm"
+                    android:id="@+id/tvCantidadAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Raza"
+                    android:text="Cantidad"
                     android:textSize="14sp" />
             </TableRow>
 
@@ -93,89 +93,16 @@
                     android:layout_height="wrap_content"
                     android:textColor="#673AB7"
                     android:textSize="16sp"
-                    android:text="Sexo:   " />
+                    android:text="Tomas:   " />
 
                 <TextView
-                    android:id="@+id/tvSexo"
+                    android:id="@+id/tvTomasAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sexo    "
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Esterilizado:   " />
-
-                <TextView
-                    android:id="@+id/tvEsterilizado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Esterilizado"
+                    android:text="Tomas    "
                     android:textSize="14sp" />
 
             </TableRow>
         </TableLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </TableLayout>
-
-        <TextView
-            android:id="@+id/tvVacuna"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Vacuna"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvFechaproxVac"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="fecha prox vac"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fecha prox desp"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvTto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tratamiento"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvAlimentacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Alimentacion"
-            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

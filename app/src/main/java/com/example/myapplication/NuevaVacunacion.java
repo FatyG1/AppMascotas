@@ -12,13 +12,13 @@ import android.widget.Toast;
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
 
-public class Vacunacion extends AppCompatActivity implements View.OnClickListener{
+public class NuevaVacunacion extends AppCompatActivity implements View.OnClickListener{
     private EditText etNombreMascota, etNombreVac, etFrecuenciaVac, etFechaVac, etFechaProxVac;
     private Button btInsertarVac;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vacunacion);
+        setContentView(R.layout.activity_nueva_vacunacion);
 
         etNombreMascota = findViewById(R.id.etNombreMascota);
         etNombreVac = findViewById(R.id.etNombreVac);

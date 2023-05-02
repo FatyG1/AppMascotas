@@ -1,10 +1,7 @@
 package com.example.myapplication;
 
-import static com.example.myapplication.R.id.btInsertarDesp;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +12,7 @@ import android.widget.Toast;
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
 
-public class Desparasitacion extends AppCompatActivity implements View.OnClickListener{
+public class NuevaDesparasitacion extends AppCompatActivity implements View.OnClickListener{
 
         private EditText etNombreMascota, etNombreDesp, etDosisDesp, etFrecuenciaDesp, etTipoDesp;
         private Button btInsertarDesp;
@@ -24,7 +21,7 @@ public class Desparasitacion extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_desparasitacion);
+        setContentView(R.layout.activity_nueva_desparasitacion);
 
         etNombreMascota = findViewById(R.id.etNombreMascota);
         etNombreDesp = findViewById(R.id.etNombreDesp);

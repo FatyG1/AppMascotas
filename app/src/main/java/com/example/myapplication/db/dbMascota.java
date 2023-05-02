@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.example.myapplication.alimentacion;
 import com.example.myapplication.miMascota;
 import androidx.annotation.Nullable;
 
@@ -116,7 +118,7 @@ public class dbMascota extends dbHelper{
         }
         return id;
     }
-
+    //Método para mostrar los datos de la mascota.
     public ArrayList<miMascota> mostrarMascotas(){
         dbHelper DbHelper = new dbHelper(context);
         SQLiteDatabase db = DbHelper.getWritableDatabase();
@@ -144,5 +146,32 @@ public class dbMascota extends dbHelper{
         cursorMascotas.close();
 
         return listaMascotas;
+    }
+    public ArrayList<alimentacion> mostrarAlimentacion(){
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        ArrayList<alimentacion> listaAlimentacion = new ArrayList<>();
+        alimentacion alimento = null;
+        Cursor cursorAlimentacion = null;
+
+        cursorAlimentacion = db.rawQuery("SELECT * FROM " + TABLA_ALIMEN, null);
+
+        if(cursorAlimentacion.moveToFirst()){
+            do{
+                alimento = new alimentacion();
+                alimento.setNombreMascota(cursorAlimentacion.getString(0));
+                alimento.setNombreAlimen(cursorAlimentacion.getString(1));
+                alimento.setCantidadAlimen(cursorAlimentacion.getString(2));
+                alimento.setTipoAlimen(cursorAlimentacion.getString(3));
+                alimento.setTomasAlimen(cursorAlimentacion.getString(4));
+
+                listaAlimentacion.add(alimento);
+            }while(cursorAlimentacion.moveToNext());
+        }
+
+        cursorAlimentacion.close();
+
+        return listaAlimentacion;
     }
 }

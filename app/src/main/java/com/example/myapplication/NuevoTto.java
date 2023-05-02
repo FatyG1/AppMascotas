@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
 
-public class Tto extends AppCompatActivity implements View.OnClickListener {
+public class NuevoTto extends AppCompatActivity implements View.OnClickListener {
     private EditText etNombreMascota, etNombreTto, etDosisTto, etFrecuenciaTto, etUsoTto, etDuracionTto;
     private Button btInsertarTto;
 
@@ -21,7 +21,7 @@ public class Tto extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tto);
+        setContentView(R.layout.activity_nuevo_tto);
 
         etNombreMascota = findViewById(R.id.etNombreMascota);
         etNombreTto = findViewById(R.id.etNombreTto);

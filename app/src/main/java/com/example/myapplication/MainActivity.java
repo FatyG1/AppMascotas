@@ -38,15 +38,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             break;
             case R.id.btVacunacion:
-                intent = new Intent(MainActivity.this, Vacunacion.class);
+                intent = new Intent(MainActivity.this, NuevaVacunacion.class);
                 startActivity(intent);
                 break;
             case R.id.btDesparasitacion:
-                intent = new Intent(MainActivity.this, Desparasitacion.class);
+                intent = new Intent(MainActivity.this, NuevaDesparasitacion.class);
                 startActivity(intent);
                 break;
             case R.id.brTto:
-                intent = new Intent(MainActivity.this, Tto.class);
+                intent = new Intent(MainActivity.this, NuevoTto.class);
                 startActivity(intent);
                 break;
             case R.id.btHistorial:
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btAlimentacion:
-                intent = new Intent(MainActivity.this, Alimentacion.class);
+                intent = new Intent(MainActivity.this, alimentacion.class);
                 startActivity(intent);
                 break;
         }
