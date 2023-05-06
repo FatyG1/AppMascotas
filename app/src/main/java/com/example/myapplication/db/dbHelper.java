@@ -33,32 +33,36 @@ public class dbHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_DESP + "(" +
                 "nombreMascota TEXT, " +
-                "nombreDesp TEXT PRIMARY KEY," +
+                "nombreDesp TEXT," +
                 "tipoDesp TEXT," +
                 "dosisDesp TEXT," +
-                "frecuenciaDesp TEXT)");
+                "frecuenciaDesp TEXT,"+
+                "PRIMARY KEY (nombreMascota, nombreDesp))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_TTO + "(" +
                 "nombreMascota TEXT, " +
-                "nombreTto TEXT PRIMARY KEY," +
+                "nombreTto TEXT," +
                 "usoTto TEXT," +
                 "dosisTto TEXT," +
                 "frecuenciaTto TEXT," +
-                "DuracionTto TEXT)");
+                "DuracionTto TEXT," +
+                "PRIMARY KEY (nombreMascota, nombreTto))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_ALIMEN + "(" +
                 "nombreMascota TEXT, " +
-                "nombreAlimen TEXT PRIMARY KEY," +
+                "nombreAlimen TEXT," +
                 "cantidadAlimen TEXT," +
                 "tomasAlimen TEXT," +
-                "tipoAlimen TEXT)");
+                "tipoAlimen TEXT,"  +
+                "PRIMARY KEY (nombreMascota, nombreAlimen))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_VAC + "(" +
                 "nombreMascota TEXT, " +
-                "nombreVac TEXT PRIMARY KEY," +
+                "nombreVac TEXT," +
                 "frecuenciaVac TEXT," +
                 "fechavac TEXT," +
-                "fechaProxVac TEXT)");
+                "fechaProxVac TEXT," +
+                " PRIMARY KEY (nombreMascota, nombreVac))");
     }
 
     @Override

@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.myapplication.alimentacion;
 import com.example.myapplication.miMascota;
+import com.example.myapplication.vacunacion;
+
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
@@ -147,6 +149,7 @@ public class dbMascota extends dbHelper{
 
         return listaMascotas;
     }
+    //Método para mostrar los datos de la alimentación de la mascota.
     public ArrayList<alimentacion> mostrarAlimentacion(){
         dbHelper DbHelper = new dbHelper(context);
         SQLiteDatabase db = DbHelper.getWritableDatabase();
@@ -173,5 +176,34 @@ public class dbMascota extends dbHelper{
         cursorAlimentacion.close();
 
         return listaAlimentacion;
+    }
+
+    //Método para mostrar los datos de la vacunación de la mascota.
+    public ArrayList<vacunacion> mostrarVacunacion(){
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        ArrayList<vacunacion> listaVacunacion = new ArrayList<>();
+        vacunacion vacuna = null;
+        Cursor cursorVacunacion= null;
+
+        cursorVacunacion = db.rawQuery("SELECT * FROM " + TABLA_VAC, null);
+
+        if(cursorVacunacion.moveToFirst()){
+            do{
+                vacuna = new vacunacion();
+                vacuna.setNombreMascota(cursorVacunacion.getString(0));
+                vacuna.setNombreVac(cursorVacunacion.getString(1));
+                vacuna.setFrecuenciaVac(cursorVacunacion.getString(2));
+                vacuna.setFechaVac(cursorVacunacion.getString(3));
+                vacuna.setFechaProxVac(cursorVacunacion.getString(4));
+
+                listaVacunacion.add( vacuna);
+            }while(cursorVacunacion.moveToNext());
+        }
+
+        cursorVacunacion.close();
+
+        return listaVacunacion;
     }
 }

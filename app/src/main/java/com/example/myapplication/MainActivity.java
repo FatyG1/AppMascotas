@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
             break;
             case R.id.btVacunacion:
-                intent = new Intent(MainActivity.this, NuevaVacunacion.class);
+                intent = new Intent(MainActivity.this, vacunacion.class);
                 startActivity(intent);
                 break;
             case R.id.btDesparasitacion:
