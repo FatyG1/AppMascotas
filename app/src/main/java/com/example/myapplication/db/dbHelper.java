@@ -37,6 +37,8 @@ public class dbHelper extends SQLiteOpenHelper {
                 "tipoDesp TEXT," +
                 "dosisDesp TEXT," +
                 "frecuenciaDesp TEXT,"+
+                "fechaDesp TEXT,"+
+                "fechaProxDesp TEXT,"+
                 "PRIMARY KEY (nombreMascota, nombreDesp))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_TTO + "(" +

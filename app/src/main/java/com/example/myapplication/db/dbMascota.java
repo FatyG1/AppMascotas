@@ -6,7 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.myapplication.alimentacion;
+import com.example.myapplication.desparasitacion;
 import com.example.myapplication.miMascota;
+import com.example.myapplication.tratamiento;
 import com.example.myapplication.vacunacion;
 
 import androidx.annotation.Nullable;
@@ -42,7 +44,7 @@ public class dbMascota extends dbHelper{
         }
         return id;
     }
-    public long insertarDesp(String nombreMascota, String nombreDesp, String dosisDesp, String frecuenciaDesp, String tipoDesp){
+    public long insertarDesp(String nombreMascota, String nombreDesp, String dosisDesp, String frecuenciaDesp, String tipoDesp, String fechaDesp, String fechaProxDesp){
         long id = 0;
         try {
             dbHelper DbHelper = new dbHelper(context);
@@ -54,6 +56,8 @@ public class dbMascota extends dbHelper{
             values.put("dosisDesp", dosisDesp);
             values.put("frecuenciaDesp", frecuenciaDesp);
             values.put("tipoDesp", tipoDesp);
+            values.put("fechaDesp", fechaDesp);
+            values.put("fechaProxDesp", fechaProxDesp);
 
             id = db.insert(TABLA_DESP, null, values);
         } catch(Exception ex){
@@ -138,8 +142,10 @@ public class dbMascota extends dbHelper{
                 mascota.setChip(cursorMascotas.getString(1));
                 mascota.setEdad(cursorMascotas.getString(2));
                 mascota.setRaza(cursorMascotas.getString(3));
-                mascota.setPeso(cursorMascotas.getString(4));
-                mascota.setSexo(cursorMascotas.getString(5));
+                mascota.setSexo(cursorMascotas.getString(4));
+                mascota.setEsterilizado(cursorMascotas.getString(5));
+                mascota.setPeso(cursorMascotas.getString(6));
+
 
                 listaMascotas.add(mascota);
             }while(cursorMascotas.moveToNext());
@@ -166,8 +172,9 @@ public class dbMascota extends dbHelper{
                 alimento.setNombreMascota(cursorAlimentacion.getString(0));
                 alimento.setNombreAlimen(cursorAlimentacion.getString(1));
                 alimento.setCantidadAlimen(cursorAlimentacion.getString(2));
-                alimento.setTipoAlimen(cursorAlimentacion.getString(3));
-                alimento.setTomasAlimen(cursorAlimentacion.getString(4));
+                alimento.setTomasAlimen(cursorAlimentacion.getString(3));
+                alimento.setTipoAlimen(cursorAlimentacion.getString(4));
+
 
                 listaAlimentacion.add(alimento);
             }while(cursorAlimentacion.moveToNext());
@@ -205,5 +212,67 @@ public class dbMascota extends dbHelper{
         cursorVacunacion.close();
 
         return listaVacunacion;
+    }
+
+    //Método para mostrar los datos de la desparasitacion de la mascota.
+    public ArrayList<desparasitacion> mostrarDesparasitacion(){
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        ArrayList<desparasitacion> listaDesparasitacion = new ArrayList<>();
+        desparasitacion desp = null;
+        Cursor cursorDesparasitacion= null;
+
+        cursorDesparasitacion = db.rawQuery("SELECT * FROM " + TABLA_DESP, null);
+
+        if(cursorDesparasitacion.moveToFirst()){
+            do{
+                desp = new desparasitacion();
+                desp.setNombreMascota(cursorDesparasitacion.getString(0));
+                desp.setNombreDesp(cursorDesparasitacion.getString(1));
+                desp.setTipoDesp(cursorDesparasitacion.getString(2));
+                desp.setDosisDesp(cursorDesparasitacion.getString(3));
+                desp.setFrecuenciaDesp(cursorDesparasitacion.getString(4));
+                desp.setFechaDesp(cursorDesparasitacion.getString(5));
+                desp.setFechaProxDesp(cursorDesparasitacion.getString(6));
+
+
+                listaDesparasitacion.add(desp);
+            }while(cursorDesparasitacion.moveToNext());
+        }
+
+        cursorDesparasitacion.close();
+
+        return listaDesparasitacion;
+    }
+
+    //Método para mostrar los datos de los tratamientos de la mascota.
+    public ArrayList<tratamiento> mostrarTratamiento(){
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        ArrayList<tratamiento> listaTratamiento = new ArrayList<>();
+        tratamiento Tto = null;
+        Cursor cursorTratamiento= null;
+
+        cursorTratamiento = db.rawQuery("SELECT * FROM " + TABLA_TTO, null);
+
+        if(cursorTratamiento.moveToFirst()){
+            do{
+                Tto = new tratamiento();
+                Tto.setNombreMascota(cursorTratamiento.getString(0));
+                Tto.setNombreTto(cursorTratamiento.getString(1));
+                Tto.setUsoTto(cursorTratamiento.getString(2));
+                Tto.setDosisTto(cursorTratamiento.getString(3));
+                Tto.setFrecuenciaTto(cursorTratamiento.getString(4));
+                Tto.setDuracionTto(cursorTratamiento.getString(5));
+
+                listaTratamiento.add(Tto);
+            }while(cursorTratamiento.moveToNext());
+        }
+
+        cursorTratamiento.close();
+
+        return listaTratamiento;
     }
 }

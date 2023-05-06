@@ -14,7 +14,7 @@ import com.example.myapplication.db.dbMascota;
 
 public class NuevaDesparasitacion extends AppCompatActivity implements View.OnClickListener{
 
-        private EditText etNombreMascota, etNombreDesp, etDosisDesp, etFrecuenciaDesp, etTipoDesp;
+        private EditText etNombreMascota, etNombreDesp, etDosisDesp, etFrecuenciaDesp, etTipoDesp, etFechaDesp, etFechaProxDesp;
         private Button btInsertarDesp;
 
    // @SuppressLint("MissingInflatedId")
@@ -28,6 +28,8 @@ public class NuevaDesparasitacion extends AppCompatActivity implements View.OnCl
         etDosisDesp = findViewById(R.id.etDosisDesp);
         etFrecuenciaDesp = findViewById(R.id.etFrecuenciaDesp);
         etTipoDesp = findViewById(R.id.etTipoDesp);
+        etFechaDesp = findViewById(R.id.etFechaDesp);
+        etFechaProxDesp = findViewById(R.id.etFechaProxDesp);
         btInsertarDesp = findViewById(R.id.btInsertarDesp);
 
         btInsertarDesp.setOnClickListener(this);
@@ -45,7 +47,7 @@ public class NuevaDesparasitacion extends AppCompatActivity implements View.OnCl
                 // Inserta datos
                 dbMascota DbMascotas = new dbMascota(this);
                 long id = DbMascotas.insertarDesp(etNombreMascota.getText().toString(), etNombreDesp.getText().toString(), etDosisDesp.getText().toString(), etFrecuenciaDesp.getText().toString(),
-                        etTipoDesp.getText().toString());
+                        etTipoDesp.getText().toString(), etFechaDesp.getText().toString(), etFechaProxDesp.getText().toString());
 
                 if (id > 0) {
                     Toast.makeText(this, "Desparasitación guardada", Toast.LENGTH_LONG).show();
@@ -57,11 +59,13 @@ public class NuevaDesparasitacion extends AppCompatActivity implements View.OnCl
         }
  }
 
-    private void limpiar(){
+    private void limpiar() {
         etNombreMascota.setText("");
         etNombreDesp.setText("");
         etDosisDesp.setText("");
         etFrecuenciaDesp.setText("");
         etTipoDesp.setText("");
-}
+        etFechaDesp.setText("");
+        etFechaProxDesp.setText("");
+    }
 }

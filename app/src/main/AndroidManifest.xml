@@ -13,7 +13,23 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".tratamiento"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
             android:name=".vacunacion"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".desparasitacion"
             android:exported="false"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -63,18 +79,18 @@
         <activity
             android:name=".NuevoTto"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".tratamiento">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".tratamiento" />
         </activity>
         <activity
             android:name=".NuevaDesparasitacion"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".desparasitacion">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".desparasitacion" />
         </activity>
         <activity
             android:name=".NuevaVacunacion"
