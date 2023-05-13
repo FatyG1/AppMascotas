@@ -1,5 +1,7 @@
 package com.example.myapplication.Adaptadores;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.NuevaMascota;
 import com.example.myapplication.R;
 import com.example.myapplication.miMascota;
 
@@ -35,6 +38,7 @@ public class ListaMascotaAdapter extends RecyclerView.Adapter<ListaMascotaAdapte
         holder.tvRazaLm.setText(listaMascotas.get(position).getRaza());
         holder.tvSexo.setText(listaMascotas.get(position).getSexo());
         holder.tvEsterilizado.setText(listaMascotas.get(position).getEsterilizado());
+        holder.tvPeso.setText(listaMascotas.get(position).getPeso());
     }
 
     @Override
@@ -44,7 +48,7 @@ public class ListaMascotaAdapter extends RecyclerView.Adapter<ListaMascotaAdapte
 
     public class MascotaViewHolder extends RecyclerView.ViewHolder {
 
-       TextView tvNombre, tvChip, tvEdad, tvRazaLm, tvSexo, tvEsterilizado;
+       TextView tvNombre, tvChip, tvEdad, tvRazaLm, tvSexo, tvEsterilizado, tvPeso;
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);
             tvNombre = itemView.findViewById(R.id.tvNombre);
@@ -53,7 +57,17 @@ public class ListaMascotaAdapter extends RecyclerView.Adapter<ListaMascotaAdapte
             tvRazaLm = itemView.findViewById(R.id.tvRazaLm);
             tvSexo = itemView.findViewById(R.id.tvSexo);
             tvEsterilizado = itemView.findViewById(R.id.tvEsterilizado);
+            tvPeso = itemView.findViewById(R.id.tvPeso);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, NuevaMascota.class);
+                        intent.putExtra("NOMBRE", listaMascotas.get(getAdapterPosition()).getNombre());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

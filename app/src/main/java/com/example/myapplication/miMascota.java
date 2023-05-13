@@ -31,6 +31,8 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
     private String proxDesp;
     private String nombreTto;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,7 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
         ListaMascotaAdapter adapter = new ListaMascotaAdapter(DbMascota.mostrarMascotas());
 
         rwMascota.setAdapter(adapter);
+
 
     }
 

@@ -23,13 +23,14 @@ public class dbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_MASCOTAS + "(" +
-                "nombre TEXT PRIMARY KEY," +
+                "nombre TEXT," +
                 "chip TEXT," +
                 "edad TEXT," +
                 "peso TEXT," +
                 "raza TEXT," +
                 "sexo TEXT," +
-                "esterilizado TEXT)");
+                "esterilizado TEXT,"+
+               "PRIMARY KEY (nombre))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_DESP + "(" +
                 "nombreMascota TEXT, " +
