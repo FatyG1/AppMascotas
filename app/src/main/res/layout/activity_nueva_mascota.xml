@@ -16,7 +16,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvNuevaMascota"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="#94F129"
@@ -122,32 +122,6 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/rbSexM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:checked="true"
-                    android:text="Macho"
-                    android:textSize="20sp" />
-
-                <RadioButton
-                    android:id="@+id/rbSexH"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="Hembra"
-                    android:textSize="20sp" />
-
-            </RadioGroup>
 
             <TextView
                 android:id="@+id/textView2"
@@ -168,38 +142,6 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
-
-            <RadioGroup
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/rbEstS"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:checked="false"
-                    android:text="Si"
-                    android:textSize="20sp" />
-
-                <RadioButton
-                    android:id="@+id/rbEstN"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
-                    android:checked="true"
-                    android:text="No"
-                    android:textSize="20sp" />
-
-            </RadioGroup>
 
             <TextView
                 android:id="@+id/textView8"
@@ -223,15 +165,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btGuardar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="150px"
-                    android:layout_marginLeft="150px"
                     android:layout_marginTop="20px"
                     android:text="Guardar"
                     android:textColor="#BD1CD8"
@@ -240,6 +180,29 @@
                     tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="158dp"
                     tools:layout_editor_absoluteY="108dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btModificar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="35px"
+                    android:layout_marginLeft="85px"
+                    android:layout_marginTop="20px"
+                    android:text="Modificar"
+                    android:textColor="#BD1CD8"
+                    android:textSize="24sp"
+                    app:backgroundTint="#5EF165"
+                    tools:ignore="TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="158dp"
+                    tools:layout_editor_absoluteY="108dp"/>
 
                 <Button
                     android:id="@+id/btBorrar"
@@ -256,6 +219,7 @@
                     tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="158dp"
                     tools:layout_editor_absoluteY="108dp" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

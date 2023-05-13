@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".desparasitacion">
+    tools:context=".tratamiento">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,23 +23,23 @@
                 android:background="#94F129"
                 android:fontFamily="cursive"
                 android:gravity="center"
-                android:text="DESPARASITACION"
+                android:text="TRATAMIENTO"
                 android:textColor="#673AB7"
                 android:textSize="45sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rwDesparasitacion"
+                android:id="@+id/rwTratamiento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <Button
-                android:id="@+id/btNuevaDesp"
+                android:id="@+id/btNuevoTto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="70px"
-                android:text="Nueva Desparasitación"
+                android:text="Nuevo Tratamiento"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
                 app:backgroundTint="#5EF165"

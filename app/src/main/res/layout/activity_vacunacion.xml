@@ -5,18 +5,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Vacunacion">
+    tools:context=".vacunacion">
 
-    <TextView
-        android:id="@+id/textView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="98dp"
-        android:background="#94F129"
-        android:fontFamily="cursive"
-        android:gravity="center"
-        android:text="VACUNACION"
-        android:textColor="#673AB7"
-        android:textSize="45sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#94F129"
+                android:fontFamily="cursive"
+                android:gravity="center"
+                android:text="VACUNACION"
+                android:textColor="#673AB7"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rwVacunacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btNuevaVac"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="Nueva Vacuna"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="158dp"
+                tools:layout_editor_absoluteY="108dp" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

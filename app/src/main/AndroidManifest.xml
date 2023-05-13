@@ -13,15 +13,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".NuevaMascota"
-            android:exported="false"
-            android:parentActivityName=".miMascota">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".miMascota" />
-        </activity>
-        <activity
-            android:name=".Alimentacion"
+            android:name=".tratamiento"
             android:exported="false"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -29,8 +21,50 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
+            android:name=".vacunacion"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".desparasitacion"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".alimentacion"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".NuevaMascota"
+            android:exported="false"
+            android:parentActivityName=".miMascota">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".miMascota" />
+        </activity>
+
+        <activity
+            android:name=".NuevaAlimentacion"
+            android:exported="false"
+            android:parentActivityName=".alimentacion">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".alimentacion" />
+        </activity>
+        <activity
             android:name=".MiVet"
-            android:exported="false" android:parentActivityName=".MainActivity">
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
@@ -44,28 +78,28 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".Tto"
+            android:name=".NuevoTto"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".tratamiento">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".tratamiento" />
         </activity>
         <activity
-            android:name=".Desparasitacion"
+            android:name=".NuevaDesparasitacion"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".desparasitacion">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".desparasitacion" />
         </activity>
         <activity
-            android:name=".Vacunacion"
+            android:name=".NuevaVacunacion"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".vacunacion">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".vacunacion" />
         </activity>
         <activity
             android:name=".miMascota"
@@ -88,6 +122,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
     </application>
 
 </manifest>

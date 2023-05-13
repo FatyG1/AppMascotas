@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:fontFamily="cursive"
+            android:gravity="center"
+            android:text="Nombre"
+            android:textColor="#673AB7"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Nombre del tratamiento:   " />
+
+                <TextView
+                    android:id="@+id/tvNombreTto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NombreTto"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Uso del tratamiento:   " />
+
+                <TextView
+                    android:id="@+id/tvUsoTto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="usoTto"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Dosis:   " />
+
+                <TextView
+                    android:id="@+id/tvDosisTto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="dosisTto"
+                    android:textSize="14sp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Frecuencia tratamiento:   " />
+
+                <TextView
+                    android:id="@+id/tvFrecuenciaTto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="frecuenciaTto"
+                    android:textSize="14sp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Duracion del tratamiento:   " />
+
+                <TextView
+                    android:id="@+id/tvDuracionTto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DuracionTto"
+                    android:textSize="14sp" />
+                </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</LinearLayout>

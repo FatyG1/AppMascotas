@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:fontFamily="cursive"
+            android:gravity="center"
+            android:text="Nombre"
+            android:textColor="#673AB7"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="CHIP:   " />
+                <TextView
+                    android:id="@+id/tvChip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chip"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Fecha de nacimiento:   " />
+
+                <TextView
+                    android:id="@+id/tvEdad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="fechaNac"
+                    android:textSize="14sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Raza:   " />
+
+                <TextView
+                    android:id="@+id/tvRazaLm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Raza"
+                    android:textSize="14sp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="71dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Peso:   " />
+
+                <TextView
+                    android:id="@+id/tvPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Peso"
+                    android:textSize="14sp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Sexo:   " />
+
+                <TextView
+                    android:id="@+id/tvSexo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sexo    "
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#673AB7"
+                    android:textSize="16sp"
+                    android:text="Esterilizado:   " />
+
+                <TextView
+                    android:id="@+id/tvEsterilizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Esterilizado"
+                    android:textSize="14sp" />
+
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/tvVacuna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vacuna"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvFechaproxVac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="fecha prox vac"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDesp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha prox desp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tratamiento"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvAlimentacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alimentacion"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

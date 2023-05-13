@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".miMascota">
 
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
   <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -24,6 +28,11 @@
         android:textSize="45sp"
         android:textStyle="bold" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rwMascota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/btNueva"
         android:layout_width="wrap_content"
@@ -39,5 +48,5 @@
         tools:layout_editor_absoluteY="108dp" />
 
   </LinearLayout>
-
+  </ScrollView>
 </LinearLayout>

@@ -19,30 +19,53 @@ public class dbHelper extends SQLiteOpenHelper {
     public dbHelper(@Nullable Context context ) {
        super(context, DATABASE_NOMBRE, null, DATABASE_VERSION );
     }
-
+    //Creación de tablas
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_MASCOTAS + "(" +
-                "nombre TEXT PRIMARY KEY," +
+                "nombre TEXT," +
                 "chip TEXT," +
                 "edad TEXT," +
                 "peso TEXT," +
                 "raza TEXT," +
                 "sexo TEXT," +
-                "esterilizado TEXT)");
+                "esterilizado TEXT,"+
+               "PRIMARY KEY (nombre))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_DESP + "(" +
-                "nombreDesp TEXT PRIMARY KEY," +
+                "nombreMascota TEXT, " +
+                "nombreDesp TEXT," +
                 "tipoDesp TEXT," +
                 "dosisDesp TEXT," +
-                "frecuenciaDesp TEXT)");
+                "frecuenciaDesp TEXT,"+
+                "fechaDesp TEXT,"+
+                "fechaProxDesp TEXT,"+
+                "PRIMARY KEY (nombreMascota, nombreDesp))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_TTO + "(" +
-                "nombreTto TEXT PRIMARY KEY," +
+                "nombreMascota TEXT, " +
+                "nombreTto TEXT," +
                 "usoTto TEXT," +
                 "dosisTto TEXT," +
                 "frecuenciaTto TEXT," +
-                "DuracionTto TEXT)");
+                "DuracionTto TEXT," +
+                "PRIMARY KEY (nombreMascota, nombreTto))");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_ALIMEN + "(" +
+                "nombreMascota TEXT, " +
+                "nombreAlimen TEXT," +
+                "cantidadAlimen TEXT," +
+                "tomasAlimen TEXT," +
+                "tipoAlimen TEXT,"  +
+                "PRIMARY KEY (nombreMascota, nombreAlimen))");
+
+        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_VAC + "(" +
+                "nombreMascota TEXT, " +
+                "nombreVac TEXT," +
+                "frecuenciaVac TEXT," +
+                "fechavac TEXT," +
+                "fechaProxVac TEXT," +
+                " PRIMARY KEY (nombreMascota, nombreVac))");
     }
 
     @Override
@@ -50,6 +73,8 @@ public class dbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE " + TABLA_MASCOTAS);
         sqLiteDatabase.execSQL("DROP TABLE " + TABLA_DESP);
         sqLiteDatabase.execSQL("DROP TABLE " + TABLA_TTO);
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLA_ALIMEN);
+        sqLiteDatabase.execSQL("DROP TABLE " + TABLA_VAC);
         onCreate(sqLiteDatabase);
     }
 
