@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-       private Button btMiMascota, btVacunacion, btDesparasitacion, btTto, btHistorial, btMivet, btAlimentacion ;
+       private Button btMiMascota, btVacunacion, btDesparasitacion, btTto, btAlimentacion, btHistorial, btMivet ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,17 +18,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btVacunacion = findViewById(R.id.btVacunacion);
         btDesparasitacion = findViewById(R.id.btDesparasitacion);
         btTto = findViewById(R.id.brTto);
+        btAlimentacion = findViewById(R.id.btAlimentacion);
         btHistorial = findViewById(R.id.btHistorial);
         btMivet = findViewById(R.id.btMiVet);
-        btAlimentacion = findViewById(R.id.btAlimentacion);
 
         btMiMascota.setOnClickListener(this);
         btVacunacion.setOnClickListener(this);
         btDesparasitacion.setOnClickListener(this);
         btTto.setOnClickListener(this);
-        btHistorial.setOnClickListener(this);
-        btMivet.setOnClickListener(this);
         btAlimentacion.setOnClickListener(this);
+
+        btHistorial.setVisibility(View.INVISIBLE);
+        btMivet.setVisibility(View.INVISIBLE);
         }
     @Override
     public void onClick(View view) {
@@ -47,14 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.brTto:
                 intent = new Intent(MainActivity.this, tratamiento.class);
-                startActivity(intent);
-                break;
-            case R.id.btHistorial:
-                intent = new Intent(MainActivity.this, Historial.class);
-                startActivity(intent);
-                break;
-            case R.id.btMiVet:
-                intent = new Intent(MainActivity.this, MiVet.class);
                 startActivity(intent);
                 break;
             case R.id.btAlimentacion:

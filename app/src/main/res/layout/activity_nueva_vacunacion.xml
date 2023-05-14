@@ -19,11 +19,11 @@
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
-                    android:layout_height="98dp"
+                    android:layout_height="110dp"
                     android:background="#94F129"
                     android:fontFamily="cursive"
                     android:gravity="center"
-                    android:text="VACUNACION"
+                    android:text="NUEVA VACUNA"
                     android:textColor="#673AB7"
                     android:textSize="45sp"
                     android:textStyle="bold" />
@@ -136,7 +136,7 @@
                     android:layout_marginStart="0px"
                     android:layout_marginLeft="0px"
                     android:layout_marginTop="20px"
-                    android:text="Añadir vacunación"
+                    android:text="Guardar"
                     android:textColor="#BD1CD8"
                     android:textSize="24sp"
                     app:backgroundTint="#5EF165"

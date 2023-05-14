@@ -26,12 +26,6 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
     private String peso;
     private String sexo;
     private String esterilizado;
-    private String nombreAlimen;
-    private String nombreDesp;
-    private String proxDesp;
-    private String nombreTto;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +45,6 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
         ListaMascotaAdapter adapter = new ListaMascotaAdapter(DbMascota.mostrarMascotas());
 
         rwMascota.setAdapter(adapter);
-
-
     }
 
     @Override
@@ -62,103 +54,49 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
                 Intent intent = new Intent(miMascota.this, NuevaMascota.class);
                 startActivity(intent);
                 break;
-
         }
     }
 
     //Creación de getter y setter.
-    public Button getBtNueva() {
-        return btNueva;
-    }
-
-    public void setBtNueva(Button btNueva) {
-        this.btNueva = btNueva;
-    }
-
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public String getChip() {
         return chip;
     }
-
     public void setChip(String chip) {
         this.chip = chip;
     }
-
     public String getEdad() {
         return edad;
     }
-
     public void setEdad(String edad) {
         this.edad = edad;
     }
-
     public String getRaza() {
         return raza;
     }
-
     public void setRaza(String raza) {
         this.raza = raza;
     }
-
     public String getPeso() {
         return peso;
     }
-
     public void setPeso(String peso) {
         this.peso = peso;
     }
-
     public String getEsterilizado() {
         return esterilizado;
     }
-
     public void setEsterilizado(String esterilizado) {
         this.esterilizado = esterilizado;
     }
-
-    public String getNombreAlimen() {
-        return nombreAlimen;
-    }
-
-    public void setNombreAlimen(String nombreAlimen) {
-        this.nombreAlimen = nombreAlimen;
-    }
-
-    public String getNombreDesp() {
-        return nombreDesp;
-    }
-
-    public void setNombreDesp(String nombreDesp) {
-        this.nombreDesp = nombreDesp;
-    }
-
-    public String getProxDesp() {
-        return proxDesp;
-    }
-
-    public void setProxDesp(String proxDesp) {
-        this.proxDesp = proxDesp;
-    }
-
-    public String getNombreTto() {
-        return nombreTto;
-    }
-
-    public void setNombreTto(String nombreTto) {
-        this.nombreTto = nombreTto;
-    }
-
     public String getSexo() {
         return sexo;
     }
-
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }

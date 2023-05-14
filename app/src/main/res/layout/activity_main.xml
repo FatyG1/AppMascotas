@@ -31,7 +31,6 @@
                 android:textSize="45sp"
                 android:textStyle="bold" />
 
-
             <Button
                 android:id="@+id/btMiMascota"
                 android:layout_width="wrap_content"
@@ -80,23 +79,23 @@
                 app:backgroundTint="#5EF165" />
 
             <Button
-                android:id="@+id/btHistorial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="70px"
-                android:text="@string/historial"
-                android:textColor="#BD1CD8"
-                android:textSize="24sp"
-                app:backgroundTint="#5EF165" />
-
-            <Button
                 android:id="@+id/btAlimentacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="70px"
                 android:text="ALIMENTACIÓN"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165" />
+
+            <Button
+                android:id="@+id/btHistorial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70px"
+                android:text="@string/historial"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
                 app:backgroundTint="#5EF165" />

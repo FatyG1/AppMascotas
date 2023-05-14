@@ -19,14 +19,12 @@ import java.util.ArrayList;
 public class ListaMascotaAdapter extends RecyclerView.Adapter<ListaMascotaAdapter.MascotaViewHolder> {
    ArrayList<miMascota> listaMascotas;
    public ListaMascotaAdapter (ArrayList<miMascota> listaMascotas){
-       this.listaMascotas = listaMascotas;
-   }
+       this.listaMascotas = listaMascotas;   }
 
     @NonNull
     @Override
     public MascotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_mascotas, null, false);
-
         return new MascotaViewHolder(view);
     }
 
@@ -47,7 +45,6 @@ public class ListaMascotaAdapter extends RecyclerView.Adapter<ListaMascotaAdapte
     }
 
     public class MascotaViewHolder extends RecyclerView.ViewHolder {
-
        TextView tvNombre, tvChip, tvEdad, tvRazaLm, tvSexo, tvEsterilizado, tvPeso;
         public MascotaViewHolder(@NonNull View itemView) {
             super(itemView);

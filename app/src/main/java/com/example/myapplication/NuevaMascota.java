@@ -51,6 +51,9 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
         btBorrar.setOnClickListener(this);
         btModificar.setOnClickListener(this);
 
+        btModificar.setVisibility(View.INVISIBLE);
+        btBorrar.setVisibility(View.INVISIBLE);
+
         if(savedInstanceState == null){
             Bundle extras = getIntent().getExtras();
             if(extras == null){
@@ -73,6 +76,8 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
             etEsterilizado.setText(mascota.getEsterilizado());
             etSexo.setText(mascota.getSexo());
             btGuardar.setVisibility(View.INVISIBLE);
+            btModificar.setVisibility(View.VISIBLE);
+            btBorrar.setVisibility(View.VISIBLE);
             tvNuevaMascota.setText("EDITAR MASCOTA");
         }
     }
@@ -86,7 +91,6 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
 
                 // Inserta datos
-
                 long id= DbMascotas.insertarMascota(etNombre.getText().toString(), etChip.getText().toString(), etEdad.getText().toString(),
                         etRaza.getText().toString(), etPeso.getText().toString(), etSexo.getText().toString(), etEsterilizado.getText().toString());
 
@@ -96,8 +100,8 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
                 }else{
                     Toast.makeText(this, "Error al guardar la mascota", Toast.LENGTH_LONG).show();
                 }
-
                 break;
+
             case(R.id.btModificar):
                 if(!etNombre.getText().toString().equals("")){
                     correcto= DbMascotas.editarMascota(etNombre.getText().toString(), etChip.getText().toString(), etEdad.getText().toString(), etRaza.getText().toString(), etPeso.getText().toString(), etEsterilizado.getText().toString(), etSexo.getText().toString());
@@ -109,6 +113,7 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
                     }
                 }
                 break;
+
             case(R.id.btBorrar):
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("¿Desea eliminar la mascota?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
@@ -121,7 +126,6 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
                 }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
                     }
                 }).show();
                 break;
@@ -139,7 +143,6 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
     }
     public void verRegistro(){
         Intent intent = new Intent(this, miMascota.class );
-
         startActivity(intent);
     }
 

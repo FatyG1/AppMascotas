@@ -19,11 +19,11 @@
        <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="110dp"
             android:background="#94F129"
             android:fontFamily="cursive"
             android:gravity="center"
-            android:text="DESPARASITACION"
+            android:text="NUEVA DESPARASITACION"
             android:textColor="#673AB7"
             android:textSize="45sp"
             android:textStyle="bold" />
@@ -86,38 +86,6 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rbInterna"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:checked="false"
-                android:text="Interna"
-                android:textSize="20sp" />
-
-            <RadioButton
-                android:id="@+id/rbExterna"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:checked="true"
-                android:text="Externa"
-                android:textSize="20sp" />
-
-        </RadioGroup>
 
         <TextView
             android:id="@+id/tvDosis"
@@ -205,7 +173,7 @@
             android:layout_marginStart="0px"
             android:layout_marginLeft="0px"
             android:layout_marginTop="20px"
-            android:text="Añadir desparasitación"
+            android:text="Guardar"
             android:textColor="#BD1CD8"
             android:textSize="24sp"
             app:backgroundTint="#5EF165"

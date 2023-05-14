@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -44,7 +45,8 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/textView10"
@@ -64,7 +66,8 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/textView11"
@@ -83,7 +86,8 @@
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/textView14"
@@ -102,7 +106,8 @@
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/textView12"
@@ -137,62 +142,5 @@
             </TableRow>
         </TableLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </TableLayout>
-
-        <TextView
-            android:id="@+id/tvVacuna"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Vacuna"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvFechaproxVac"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="fecha prox vac"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fecha prox desp"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvTto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tratamiento"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvAlimentacion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Alimentacion"
-            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

@@ -18,7 +18,7 @@
             <TextView
                 android:id="@+id/tvNuevaMascota"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="110dp"
                 android:background="#94F129"
                 android:fontFamily="cursive"
                 android:gravity="center"
@@ -41,9 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5px"
-                android:ems="10"
-                android:hint="Nombre"
                 android:inputType="textPersonName"
+                android:hint="Nombre"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -180,7 +179,6 @@
                     tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="158dp"
                     tools:layout_editor_absoluteY="108dp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -219,7 +217,6 @@
                     tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="158dp"
                     tools:layout_editor_absoluteY="108dp" />
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

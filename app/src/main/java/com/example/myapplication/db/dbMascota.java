@@ -14,7 +14,6 @@ import com.example.myapplication.vacunacion;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-
 public class dbMascota extends dbHelper {
     Context context;
 
@@ -146,8 +145,8 @@ public class dbMascota extends dbHelper {
                 mascota.setChip(cursorMascotas.getString(1));
                 mascota.setEdad(cursorMascotas.getString(2));
                 mascota.setRaza(cursorMascotas.getString(4));
-                mascota.setSexo(cursorMascotas.getString(5));
-                mascota.setEsterilizado(cursorMascotas.getString(6));
+                mascota.setSexo(cursorMascotas.getString(6));
+                mascota.setEsterilizado(cursorMascotas.getString(5));
                 mascota.setPeso(cursorMascotas.getString(3));
 
 
@@ -281,7 +280,7 @@ public class dbMascota extends dbHelper {
         return listaTratamiento;
     }
 
-    //Método para ver mascotas
+    //Método para ver los datos de una mascota concreta en el formulario
     public miMascota verMascotas(String nombre) {
         dbHelper DbHelper = new dbHelper(context);
         SQLiteDatabase db = DbHelper.getWritableDatabase();
@@ -297,8 +296,8 @@ public class dbMascota extends dbHelper {
                 mascota.setChip(cursorMascotas.getString(1));
                 mascota.setEdad(cursorMascotas.getString(2));
                 mascota.setRaza(cursorMascotas.getString(4));
-                mascota.setSexo(cursorMascotas.getString(5));
-                mascota.setEsterilizado(cursorMascotas.getString(6));
+                mascota.setSexo(cursorMascotas.getString(6));
+                mascota.setEsterilizado(cursorMascotas.getString(5));
                 mascota.setPeso(cursorMascotas.getString(3));
             }
 
