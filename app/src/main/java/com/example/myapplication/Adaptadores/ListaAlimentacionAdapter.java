@@ -1,5 +1,7 @@
 package com.example.myapplication.Adaptadores;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.NuevaAlimentacion;
+import com.example.myapplication.NuevaMascota;
 import com.example.myapplication.R;
 import com.example.myapplication.alimentacion;
 import com.example.myapplication.miMascota;
@@ -52,6 +56,18 @@ public class ListaAlimentacionAdapter extends RecyclerView.Adapter<ListaAlimenta
             tvTipoAl = itemView.findViewById(R.id.tvTipoAl);
             tvCantidadAl = itemView.findViewById(R.id.tvCantidadAl);
             tvTomasAl = itemView.findViewById(R.id.tvTomasAl);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, NuevaAlimentacion.class);
+                    intent.putExtra("NOMBREMASCOTA", listaAlimentacion.get(getAdapterPosition()).getNombreMascota());
+                    intent.putExtra("NOMBREALIMEN", listaAlimentacion.get(getAdapterPosition()).getNombreAlimen());
+                    context.startActivity(intent);
+                }
+            });
+        }
         }
     }
-}
+

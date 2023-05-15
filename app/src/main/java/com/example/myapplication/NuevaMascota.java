@@ -25,11 +25,11 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
     private Button btGuardar, btBorrar, btModificar;
 
     miMascota mascota;
-    String chip = null;
     String nombre= null;
-
     boolean correcto =false;
+
     dbMascota DbMascotas = new dbMascota(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

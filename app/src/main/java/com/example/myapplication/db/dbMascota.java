@@ -305,6 +305,31 @@ public class dbMascota extends dbHelper {
 
         return mascota;
     }
+    //Método para ver los datos de una alimentación concreta en el formulario
+    public alimentacion verAlimentacion(String nombreMascota, String nombreAlimen) {
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        alimentacion alimento = null;
+        Cursor cursorAlimentacion = null;
+        cursorAlimentacion = db.rawQuery("SELECT * FROM " + TABLA_ALIMEN + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreAlimen  = '" + nombreAlimen + "'", null);
+
+        if (cursorAlimentacion.moveToFirst()) {
+            do {
+                alimento = new alimentacion();
+                alimento.setNombreMascota(cursorAlimentacion.getString(0));
+                alimento.setNombreAlimen(cursorAlimentacion.getString(1));
+                alimento.setCantidadAlimen(cursorAlimentacion.getString(2));
+                alimento.setTomasAlimen(cursorAlimentacion.getString(3));
+                alimento.setTipoAlimen(cursorAlimentacion.getString(4));
+
+            } while (cursorAlimentacion.moveToNext());
+        }
+
+        cursorAlimentacion.close();
+
+        return alimento;
+    }
     //Método para editar mascota
     public boolean editarMascota(String nombre, String chip, String edad, String raza, String peso, String sexo, String esterilizado) {
         boolean correcto = false;
@@ -325,7 +350,26 @@ public class dbMascota extends dbHelper {
         }
         return correcto;
     }
+    //Método para editar la alimentación
+    public boolean editarAlimentacion(String nombreMascota, String nombreAlimen, String cantidadAlimen, String tomasAlimen, String tipoAlimen) {
+        boolean correcto = false;
 
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" UPDATE " + TABLA_ALIMEN + " SET nombreMascota  = '" + nombreMascota + "', nombreAlimen  = '" + nombreAlimen + "', cantidadAlimen  = '" + cantidadAlimen + "', tomasAlimen  = '" + tomasAlimen + "', tipoAlimen  = '" + tipoAlimen + "'" + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreAlimen  = '" + nombreAlimen + "'");
+
+            correcto = true;
+        }catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+
+        return correcto;
+    }
     //Método para borrar mascota
     public boolean borrarMascota(String nombre) {
         boolean correcto = false;
@@ -344,4 +388,24 @@ public class dbMascota extends dbHelper {
         }
         return correcto;
     }
+
+    //Método para borrar alimentación
+    public boolean borrarAlimentacion(String nombreMascota, String nombreAlimen) {
+        boolean correcto = false;
+
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" DELETE FROM " + TABLA_ALIMEN + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreAlimen  = '" + nombreAlimen + "' ");
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+
 }
