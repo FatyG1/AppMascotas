@@ -23,7 +23,7 @@ public class dbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
        sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_MASCOTAS + "(" +
-                "nombre TEXT," +
+                "nombre TEXT NOT NULL," +
                 "chip TEXT," +
                 "edad TEXT," +
                 "peso TEXT," +
@@ -33,8 +33,8 @@ public class dbHelper extends SQLiteOpenHelper {
                "PRIMARY KEY (nombre))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_DESP + "(" +
-                "nombreMascota TEXT, " +
-                "nombreDesp TEXT," +
+                "nombreMascota TEXT NOT NULL, " +
+                "nombreDesp TEXT NOT NULL," +
                 "tipoDesp TEXT," +
                 "dosisDesp TEXT," +
                 "frecuenciaDesp TEXT,"+
@@ -43,8 +43,8 @@ public class dbHelper extends SQLiteOpenHelper {
                 "PRIMARY KEY (nombreMascota, nombreDesp))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_TTO + "(" +
-                "nombreMascota TEXT, " +
-                "nombreTto TEXT," +
+                "nombreMascota TEXT NOT NULL, " +
+                "nombreTto TEXT NOT NULL," +
                 "usoTto TEXT," +
                 "dosisTto TEXT," +
                 "frecuenciaTto TEXT," +
@@ -52,16 +52,16 @@ public class dbHelper extends SQLiteOpenHelper {
                 "PRIMARY KEY (nombreMascota, nombreTto))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_ALIMEN + "(" +
-                "nombreMascota TEXT, " +
-                "nombreAlimen TEXT," +
+                "nombreMascota TEXT NOT NULL, " +
+                "nombreAlimen TEXT NOT NULL," +
                 "cantidadAlimen TEXT," +
                 "tomasAlimen TEXT," +
                 "tipoAlimen TEXT,"  +
                 "PRIMARY KEY (nombreMascota, nombreAlimen))");
 
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLA_VAC + "(" +
-                "nombreMascota TEXT, " +
-                "nombreVac TEXT," +
+                "nombreMascota TEXT NOT NULL, " +
+                "nombreVac TEXT NOT NULL," +
                 "frecuenciaVac TEXT," +
                 "fechavac TEXT," +
                 "fechaProxVac TEXT," +
