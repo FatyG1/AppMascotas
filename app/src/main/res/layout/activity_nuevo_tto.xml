@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tvNuevoTto"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:background="#94F129"
@@ -147,22 +147,63 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             tools:ignore="SpeakableTextPresentCheck" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/btInsertarTto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="0px"
+                android:layout_marginLeft="0px"
+                android:layout_marginTop="20px"
+                android:text="Guardar"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="158dp"
+                tools:layout_editor_absoluteY="108dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btInsertarTto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="0px"
-            android:layout_marginLeft="0px"
-            android:layout_marginTop="20px"
-            android:text="Guardar"
-            android:textColor="#BD1CD8"
-            android:textSize="24sp"
-            app:backgroundTint="#5EF165"
-            tools:ignore="TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="158dp"
-            tools:layout_editor_absoluteY="108dp" />
+            <Button
+                android:id="@+id/btModificar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="35px"
+                android:layout_marginLeft="85px"
+                android:layout_marginTop="20px"
+                android:text="Modificar"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="158dp"
+                tools:layout_editor_absoluteY="108dp"/>
+
+            <Button
+                android:id="@+id/btBorrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="35px"
+                android:layout_marginLeft="35px"
+                android:layout_marginTop="20px"
+                android:text="Borrar"
+                android:textColor="#BD1CD8"
+                android:textSize="24sp"
+                app:backgroundTint="#5EF165"
+                tools:ignore="TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="158dp"
+                tools:layout_editor_absoluteY="108dp" />
+        </LinearLayout>
     </LinearLayout>
 
     </ScrollView>

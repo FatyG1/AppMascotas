@@ -1,5 +1,7 @@
 package com.example.myapplication.Adaptadores;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.NuevaAlimentacion;
+import com.example.myapplication.NuevaVacunacion;
 import com.example.myapplication.R;
 import com.example.myapplication.vacunacion;
 
@@ -51,6 +55,17 @@ public class ListaVacunacionAdapter extends RecyclerView.Adapter<ListaVacunacion
             tvFrecuenciaVac = itemView.findViewById(R.id.tvFrecuenciaVac);
             tvFechaVac = itemView.findViewById(R.id.tvFechaVac);
             tvFechaProxVac = itemView.findViewById(R.id.tvFechaProxVac);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, NuevaVacunacion.class);
+                    intent.putExtra("NOMBREMASCOTA", listaVacunacion.get(getAdapterPosition()).getNombreMascota());
+                    intent.putExtra("NOMBREVAC", listaVacunacion.get(getAdapterPosition()).getNombreVac());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

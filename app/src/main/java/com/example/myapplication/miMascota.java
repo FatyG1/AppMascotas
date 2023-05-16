@@ -19,7 +19,7 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
     private RecyclerView rwMascota;
 
     private ArrayList<miMascota> listaArraymascotas;
-    private String nombre;
+    private String nombre = null;
     private String chip;
     private String edad;
     private String raza;
@@ -59,7 +59,7 @@ public class miMascota extends AppCompatActivity implements View.OnClickListener
 
     //Creación de getter y setter.
     public String getNombre() {
-        return nombre;
+         return nombre;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;

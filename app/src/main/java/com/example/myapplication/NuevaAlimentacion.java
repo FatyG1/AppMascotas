@@ -77,7 +77,7 @@ public class NuevaAlimentacion extends AppCompatActivity implements View.OnClick
             btInsertarAlimen.setVisibility(View.INVISIBLE);
             btModificar.setVisibility(View.VISIBLE);
             btBorrar.setVisibility(View.VISIBLE);
-            tvNuevaAlimentacion.setText("EDITAR MASCOTA");
+            tvNuevaAlimentacion.setText("EDITAR ALIMENTO");
         }
     }
 

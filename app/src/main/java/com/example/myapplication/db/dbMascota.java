@@ -330,6 +330,87 @@ public class dbMascota extends dbHelper {
 
         return alimento;
     }
+
+    //Método para ver los datos de una vacuna concreta en el formulario
+    public vacunacion verVacunacion(String nombreMascota, String nombreVac) {
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        vacunacion vacuna = null;
+        Cursor cursorVacunacion = null;
+        cursorVacunacion = db.rawQuery("SELECT * FROM " + TABLA_VAC + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreVac  = '" + nombreVac + "'", null);
+
+        if (cursorVacunacion.moveToFirst()) {
+            do {
+                vacuna = new vacunacion();
+                vacuna.setNombreMascota(cursorVacunacion.getString(0));
+                vacuna.setNombreVac(cursorVacunacion.getString(1));
+                vacuna.setFrecuenciaVac(cursorVacunacion.getString(2));
+                vacuna.setFechaVac(cursorVacunacion.getString(3));
+                vacuna.setFechaProxVac(cursorVacunacion.getString(4));
+
+            } while (cursorVacunacion.moveToNext());
+        }
+
+        cursorVacunacion.close();
+
+        return vacuna;
+    }
+
+    //Método para ver los datos de una desparasitación concreta en el formulario
+    public desparasitacion verDesparasitacion(String nombreMascota, String nombreDesp) {
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        desparasitacion desp = null;
+        Cursor cursorDesparasitacion = null;
+        cursorDesparasitacion = db.rawQuery("SELECT * FROM " + TABLA_DESP + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreDesp  = '" + nombreDesp + "'", null);
+
+        if (cursorDesparasitacion.moveToFirst()) {
+            do {
+                desp = new desparasitacion();
+                desp.setNombreMascota(cursorDesparasitacion.getString(0));
+                desp.setNombreDesp(cursorDesparasitacion.getString(1));
+                desp.setTipoDesp(cursorDesparasitacion.getString(2));
+                desp.setDosisDesp(cursorDesparasitacion.getString(3));
+                desp.setFrecuenciaDesp(cursorDesparasitacion.getString(4));
+                desp.setFechaDesp(cursorDesparasitacion.getString(5));
+                desp.setFechaProxDesp(cursorDesparasitacion.getString(6));
+
+            } while (cursorDesparasitacion.moveToNext());
+        }
+
+        cursorDesparasitacion.close();
+
+        return desp;
+    }
+
+    //Método para ver los datos de un tratamiento concreta en el formulario
+    public tratamiento verTto(String nombreMascota, String nombreTto) {
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+       tratamiento Tto = null;
+        Cursor cursorTratamiento = null;
+        cursorTratamiento = db.rawQuery("SELECT * FROM " + TABLA_TTO + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreTto  = '" + nombreTto + "'", null);
+
+        if (cursorTratamiento.moveToFirst()) {
+            do {
+                Tto = new tratamiento();
+                Tto.setNombreMascota(cursorTratamiento.getString(0));
+                Tto.setNombreTto(cursorTratamiento.getString(1));
+                Tto.setUsoTto(cursorTratamiento.getString(2));
+                Tto.setDosisTto(cursorTratamiento.getString(3));
+                Tto.setFrecuenciaTto(cursorTratamiento.getString(4));
+                Tto.setDuracionTto(cursorTratamiento.getString(5));
+
+            } while (cursorTratamiento.moveToNext());
+        }
+
+        cursorTratamiento.close();
+
+        return Tto;
+    }
     //Método para editar mascota
     public boolean editarMascota(String nombre, String chip, String edad, String raza, String peso, String sexo, String esterilizado) {
         boolean correcto = false;
@@ -359,6 +440,66 @@ public class dbMascota extends dbHelper {
 
         try {
             db.execSQL(" UPDATE " + TABLA_ALIMEN + " SET nombreMascota  = '" + nombreMascota + "', nombreAlimen  = '" + nombreAlimen + "', cantidadAlimen  = '" + cantidadAlimen + "', tomasAlimen  = '" + tomasAlimen + "', tipoAlimen  = '" + tipoAlimen + "'" + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreAlimen  = '" + nombreAlimen + "'");
+
+            correcto = true;
+        }catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+
+        return correcto;
+    }
+    //Método para editar la vacuna
+    public boolean editarVacunacion(String nombreMascota, String nombreVac, String frecuenciaVac, String fechaVac, String fechaProxVac) {
+        boolean correcto = false;
+
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" UPDATE " + TABLA_VAC + " SET nombreMascota  = '" + nombreMascota + "', nombreVac  = '" + nombreVac + "', frecuenciaVac  = '" + frecuenciaVac + "', fechaVac  = '" + fechaVac + "', fechaProxVac  = '" + fechaProxVac + "'" + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreVac  = '" + nombreVac + "'");
+
+            correcto = true;
+        }catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+
+        return correcto;
+    }
+    //Método para editar la desparasitacion
+    public boolean editarDesparasitacion(String nombreMascota, String nombreDesp, String DosisDesp, String tipoDesp, String frecuenciaDesp, String fechaDesp, String fechaProxDesp) {
+        boolean correcto = false;
+
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" UPDATE " + TABLA_DESP + " SET nombreMascota  = '" + nombreMascota + "', nombreDesp  = '" + nombreDesp + "', DosisDesp  = '" + DosisDesp + "', tipoDesp  = '" + tipoDesp + "', frecuenciaDesp  = '" + frecuenciaDesp + "', fechaDesp  = '" +fechaDesp + "', fechaProxDesp =  '" + fechaProxDesp + "'" + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreDesp  = '" + nombreDesp + "'");
+
+            correcto = true;
+        }catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+
+        return correcto;
+    }
+    //Método para editar el tratamiento
+    public boolean editarTto(String nombreMascota, String nombreTto, String usoTto, String DosisTto, String frecuenciaTto, String duracionTto) {
+        boolean correcto = false;
+
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" UPDATE " + TABLA_TTO + " SET nombreMascota  = '" + nombreMascota + "', nombreTto  = '" + nombreTto + "', usoTto  = '" + usoTto + "', DosisTto  = '" + DosisTto + "', frecuenciaTto = '" + frecuenciaTto + "', duracionTto  = '" + duracionTto + "'" + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreTto  = '" + nombreTto + "'");
 
             correcto = true;
         }catch (Exception ex) {
@@ -407,5 +548,58 @@ public class dbMascota extends dbHelper {
         }
         return correcto;
     }
+    //Método para borrar una vacuna
+    public boolean borrarVacunacion(String nombreMascota, String nombreVac) {
+        boolean correcto = false;
 
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" DELETE FROM " + TABLA_VAC + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreVac  = '" + nombreVac + "' ");
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+    //Método para borrar una desparasitacion
+    public boolean borrarDesparasitacion(String nombreMascota, String nombreDesp) {
+        boolean correcto = false;
+
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" DELETE FROM " + TABLA_DESP + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreDesp  = '" + nombreDesp + "' ");
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
+    //Método para borrar un tratamiento
+    public boolean borrarTto(String nombreMascota, String nombreTto) {
+        boolean correcto = false;
+
+        dbHelper DbHelper = new dbHelper(context);
+        SQLiteDatabase db = DbHelper.getWritableDatabase();
+
+        try {
+            db.execSQL(" DELETE FROM " + TABLA_TTO + " WHERE nombreMascota  = '" + nombreMascota + "' AND nombreTto  = '" + nombreTto + "' ");
+            correcto = true;
+        } catch (Exception ex) {
+            ex.toString();
+            correcto = false;
+        } finally {
+            db.close();
+        }
+        return correcto;
+    }
 }

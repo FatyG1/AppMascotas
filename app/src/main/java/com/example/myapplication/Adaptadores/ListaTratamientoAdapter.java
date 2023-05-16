@@ -1,5 +1,7 @@
 package com.example.myapplication.Adaptadores;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.NuevaDesparasitacion;
+import com.example.myapplication.NuevoTto;
 import com.example.myapplication.R;
 import com.example.myapplication.desparasitacion;
 import com.example.myapplication.tratamiento;
@@ -54,6 +58,17 @@ public class ListaTratamientoAdapter extends RecyclerView.Adapter<ListaTratamien
             tvFrecuenciaTto = itemView.findViewById(R.id.tvFrecuenciaTto);
             tvDosisTto = itemView.findViewById(R.id.tvDosisTto);
             tvDuracionTto = itemView.findViewById(R.id.tvDuracionTto);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, NuevoTto.class);
+                    intent.putExtra("NOMBREMASCOTA", listaTratamiento.get(getAdapterPosition()).getNombreMascota());
+                    intent.putExtra("NOMBRETTO", listaTratamiento.get(getAdapterPosition()).getNombreTto());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }
