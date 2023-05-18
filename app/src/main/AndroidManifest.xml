@@ -13,6 +13,13 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".NuevaNotificacion"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".tratamiento"
             android:exported="false"
             android:parentActivityName=".MainActivity">
@@ -52,7 +59,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".miMascota" />
         </activity>
-
         <activity
             android:name=".NuevaAlimentacion"
             android:exported="false"
@@ -122,7 +128,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
     </application>
 
 </manifest>

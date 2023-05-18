@@ -19,7 +19,7 @@ import com.example.myapplication.db.dbMascota;
 public class NuevaVacunacion extends AppCompatActivity implements View.OnClickListener{
     private EditText etNombreMascota, etNombreVac, etFrecuenciaVac, etFechaVac, etFechaProxVac;
     private TextView tvNuevaVac;
-    private Button btInsertarVac, btBorrar, btModificar;
+    private Button btInsertarVac, btBorrar, btModificar, btCrearNot;
 
     vacunacion vacuna;
     String nombreMascota= null;
@@ -41,10 +41,12 @@ public class NuevaVacunacion extends AppCompatActivity implements View.OnClickLi
         btInsertarVac = findViewById(R.id.btInsertarVac);
         btBorrar = findViewById(R.id.btBorrar);
         btModificar = findViewById(R.id.btModificar);
+        btCrearNot= findViewById(R.id.btCrearNot);
 
         btInsertarVac.setOnClickListener(this);
         btBorrar.setOnClickListener(this);
         btModificar.setOnClickListener(this);
+        btCrearNot.setOnClickListener(this);
 
         btModificar.setVisibility(View.INVISIBLE);
         btBorrar.setVisibility(View.INVISIBLE);
@@ -125,6 +127,10 @@ public class NuevaVacunacion extends AppCompatActivity implements View.OnClickLi
                     public void onClick(DialogInterface dialogInterface, int i) {
                     }
                 }).show();
+                break;
+            case R.id.btCrearNot:
+                Intent intent = new Intent(NuevaVacunacion.this, NuevaNotificacion.class);
+                startActivity(intent);
                 break;
         }
         }
