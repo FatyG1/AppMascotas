@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ACF6B0"
     tools:context=".miMascota">
 
   <ScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#94F129"
-        android:fontFamily="cursive"
-        android:gravity="center"
-        android:text="MI MASCOTA"
-        android:textColor="#673AB7"
-        android:textSize="45sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center|top"
+        android:orientation="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rwMascota"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+      <TextView
+          android:id="@+id/textView"
+          android:layout_width="match_parent"
+          android:layout_height="80dp"
+          android:background="#94F129"
+          android:fontFamily="cursive"
+          android:gravity="center"
+          android:text="MI MASCOTA"
+          android:textColor="#673AB7"
+          android:textSize="45sp"
+          android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btNueva"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="70px"
-        android:text="Nueva Mascota"
-        android:textColor="#BD1CD8"
-        android:textSize="24sp"
-        app:backgroundTint="#5EF165"
-        tools:ignore="TouchTargetSizeCheck"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="108dp" />
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rwMascota"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
 
-  </LinearLayout>
+      <Button
+          android:id="@+id/btNueva"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="20px"
+          android:text="Nueva Mascota"
+          android:textColor="#BD1CD8"
+          android:textSize="24sp"
+          app:backgroundTint="#D2E2EA"
+          tools:ignore="TouchTargetSizeCheck"
+          tools:layout_editor_absoluteX="158dp"
+          tools:layout_editor_absoluteY="108dp" />
+
+    </LinearLayout>
   </ScrollView>
 </LinearLayout>

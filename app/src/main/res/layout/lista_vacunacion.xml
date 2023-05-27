@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,12 +12,12 @@
         <TextView
             android:id="@+id/tvNombre"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:gravity="center"
             android:text="Nombre"
             android:textColor="#673AB7"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TableLayout
@@ -31,16 +32,16 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Nombre Vacuna  "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Nombre Vacuna  " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvNombreVac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="nombreVac"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -51,9 +52,9 @@
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Frecuencia vacuna:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Frecuencia vacuna:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvFrecuenciaVac"
@@ -71,16 +72,16 @@
                     android:id="@+id/textView11"
                     android:layout_width="71dp"
                     android:layout_height="wrap_content"
+                    android:text="Fecha vacuna:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Fecha vacuna:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvFechaVac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="FechaVac"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -91,18 +92,123 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Fecha próxima vacuna   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Fecha próxima vacuna   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvFechaProxVac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="FechaProxVac"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
             </TableRow>
         </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/vac" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

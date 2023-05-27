@@ -5,6 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="#ACF6B0"
     tools:context=".NuevaAlimentacion">
 
@@ -15,13 +16,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20px"
+            android:layout_gravity="center|top"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvNuevaMascota"
                 android:layout_width="match_parent"
-                android:layout_height="110dp"
+                android:layout_height="80dp"
                 android:background="#94F129"
                 android:fontFamily="cursive"
                 android:gravity="center"

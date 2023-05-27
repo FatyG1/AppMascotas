@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,12 +12,12 @@
         <TextView
             android:id="@+id/tvNombre"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:gravity="center"
             android:text="Nombre"
             android:textColor="#673AB7"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TableLayout
@@ -31,16 +32,16 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Nombre/marca   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Nombre/marca   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvNombreAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="marca"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -51,16 +52,16 @@
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Tipo:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Tipo:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvTipoAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tipo"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -71,16 +72,16 @@
                     android:id="@+id/textView11"
                     android:layout_width="71dp"
                     android:layout_height="wrap_content"
+                    android:text="Cantidad:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Cantidad:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvCantidadAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Cantidad"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -91,18 +92,123 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Tomas:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Tomas:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvTomasAl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tomas    "
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
             </TableRow>
         </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/food" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

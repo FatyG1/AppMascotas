@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,12 +12,12 @@
         <TextView
             android:id="@+id/tvNombre"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:gravity="center"
             android:text="Nombre"
             android:textColor="#673AB7"
-            android:textSize="20sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <TableLayout
@@ -31,16 +32,16 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Nombre Desparasitación  "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Nombre Desparasitación  " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvNombreDesp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="nombreDesp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -50,17 +51,17 @@
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Dosis desparasitación:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Dosis desparasitación:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvDosisDesp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="dosisDesp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -71,16 +72,16 @@
                     android:id="@+id/textView11"
                     android:layout_width="71dp"
                     android:layout_height="wrap_content"
+                    android:text="Frecuencia desparasitación:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Frecuencia desparasitación:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvFrecuenciaDesp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="FrecuenciaDesp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
 
             <TableRow
@@ -91,16 +92,16 @@
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Tipo desparasitación   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Tipo desparasitación   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvTipoDesp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TipoDesp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
 
             </TableRow>
             <TableRow
@@ -111,16 +112,16 @@
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Fecha desparasitación:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Fecha desparasitación:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvFechaDesp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="FechaDesp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
@@ -130,17 +131,134 @@
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Fecha próxima desparasitación:   "
                     android:textColor="#673AB7"
-                    android:textSize="16sp"
-                    android:text="Fecha próxima desparasitación:   " />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvFechaProxDesp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="FechaProxDesp"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
             </TableRow>
         </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/bug" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

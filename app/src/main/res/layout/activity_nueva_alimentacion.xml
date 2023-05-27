@@ -5,135 +5,136 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ACF6B0"
     tools:context=".NuevaAlimentacion">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20px"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tvNuevaAlimentacion"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="#94F129"
-            android:fontFamily="cursive"
-            android:gravity="center"
-            android:text="NUEVO ALIMENTO"
-            android:textColor="#673AB7"
-            android:textSize="45sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvNombreMascota"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Nombre mascota:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etNombreMascota"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="Sirio, Dama, Nemo, Gromit..."
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvNombreAlimen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Nombre/marca:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etNombreAlimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="Casera, hills..."
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvTipoAlimen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Tipo:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etTipoAlimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="Pienso, lata..."
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvCantidadAlimen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Cantidad por toma:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etCantidadAlimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="150gr"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvTomasAlimen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Tomas al día:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etTomasAlimen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="2"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center|top"
             android:orientation="vertical">
-           <!-- <Button
+
+            <TextView
+                android:id="@+id/tvNuevaAlimentacion"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="#94F129"
+                android:fontFamily="cursive"
+                android:gravity="center"
+                android:text="NUEVO ALIMENTO"
+                android:textColor="#673AB7"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvNombreMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Nombre mascota:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNombreMascota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Sirio, Dama, Nemo, Gromit..."
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvNombreAlimen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Nombre/marca:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNombreAlimen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Casera, hills..."
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvTipoAlimen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Tipo:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTipoAlimen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Pienso, lata..."
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvCantidadAlimen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Cantidad por toma:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCantidadAlimen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="150gr"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvTomasAlimen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Tomas al día:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTomasAlimen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="2"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!-- <Button
                 android:id="@+id/btinsertarAlimen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -148,42 +149,44 @@
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="158dp"
                 tools:layout_editor_absoluteY="108dp" />-->
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btInsertarAlimen"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/save"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btModificar"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
-                android:layout_marginLeft="140dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/edit"
-                tools:ignore="SpeakableTextPresentCheck" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btInsertarAlimen"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/save"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btBorrar"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/delete"
-                tools:ignore="SpeakableTextPresentCheck" />
-           <!-- <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btModificar"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginLeft="140dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/edit"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btBorrar"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/delete"
+                    tools:ignore="SpeakableTextPresentCheck" />
+                <!-- <Button
                 android:id="@+id/btModificar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -214,7 +217,7 @@
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="158dp"
                 tools:layout_editor_absoluteY="108dp" />-->
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>

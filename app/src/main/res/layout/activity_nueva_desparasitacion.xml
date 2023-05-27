@@ -11,164 +11,170 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-       <TextView
-            android:id="@+id/tvNuevaDesp"
-            android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="#94F129"
-            android:fontFamily="cursive"
-            android:gravity="center"
-            android:text="NUEVA DESPARASITACION"
-            android:textColor="#673AB7"
-            android:textSize="45sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tvNombreMascota"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Nombre mascota:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etNombreMascota"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="Sirio, Dama, Nemo, Gromit..."
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvNombreDesp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Nombre del tratamiento antiparasitario:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etNombreDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="Seresto, Milbemax..."
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvTipoDesp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Tipo de desparasitación:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <EditText
-            android:id="@+id/etTipoDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="Interna/externa"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvDosis"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Dosis:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etDosisDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="1 comprimido"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/tvFrecuencia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Frecuencia tratamiento antiparasitario:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etFrecuenciaDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="3 meses"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-        <TextView
-            android:id="@+id/tvFechaDesp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Fecha desparasitación"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etFechaDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="10/07/23"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-        <TextView
-            android:id="@+id/tvFechaProxDesp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:text="Fecha próxima desparasitación:"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/etFechaProxDesp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5px"
-            android:ems="10"
-            android:hint="10/10/23"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            tools:ignore="SpeakableTextPresentCheck" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center|top"
+            android:background="#ACF6B0"
             android:orientation="vertical">
-            <!--<Button
+
+            <TextView
+                android:id="@+id/tvNuevaDesp"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="#94F129"
+                android:fontFamily="cursive"
+                android:gravity="center"
+                android:text="NUEVA DESPARASITACION"
+                android:textColor="#673AB7"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvNombreMascota"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Nombre mascota:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNombreMascota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Sirio, Dama, Nemo, Gromit..."
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvNombreDesp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Nombre del tratamiento antiparasitario:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etNombreDesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Seresto, Milbemax..."
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvTipoDesp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Tipo de desparasitación:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etTipoDesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="Interna/externa"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvDosis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Dosis:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etDosisDesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="1 comprimido"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvFrecuencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Frecuencia tratamiento antiparasitario:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etFrecuenciaDesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="3 meses"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvFechaDesp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Fecha desparasitación"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etFechaDesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="10/07/23"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/tvFechaProxDesp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40px"
+                android:text="Fecha próxima desparasitación:"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etFechaProxDesp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5px"
+                android:ems="10"
+                android:hint="10/10/23"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <!--<Button
                 android:id="@+id/btInsertarDesp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -183,42 +189,44 @@
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="158dp"
                 tools:layout_editor_absoluteY="108dp" />-->
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btInsertarDesp"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/save"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btModificar"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
-                android:layout_marginLeft="140dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/edit"
-                tools:ignore="SpeakableTextPresentCheck" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btInsertarDesp"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/save"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btBorrar"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/delete"
-                tools:ignore="SpeakableTextPresentCheck" />
-          <!--  <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btModificar"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginLeft="140dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/edit"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btBorrar"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/delete"
+                    tools:ignore="SpeakableTextPresentCheck" />
+                <!--  <Button
                 android:id="@+id/btModificar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -249,7 +257,7 @@
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="158dp"
                 tools:layout_editor_absoluteY="108dp" />-->
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>
