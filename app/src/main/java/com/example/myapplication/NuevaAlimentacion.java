@@ -16,11 +16,13 @@ import android.widget.Toast;
 
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NuevaAlimentacion extends AppCompatActivity implements View.OnClickListener {
     private EditText etNombreMascota, etNombreAlimen, etTipoAlimen, etCantidadAlimen, etTomasAlimen;
     private TextView tvNuevaAlimentacion;
-    private Button btInsertarAlimen, btBorrar, btModificar;
+    //private Button btInsertarAlimen, btBorrar, btModificar;
+    FloatingActionButton btModificar, btBorrar, btInsertarAlimen;
 
     alimentacion alimento;
     String nombreMascota= null;
@@ -40,7 +42,7 @@ public class NuevaAlimentacion extends AppCompatActivity implements View.OnClick
         etTipoAlimen = findViewById(R.id.etTipoAlimen);
         etCantidadAlimen = findViewById(R.id.etCantidadAlimen);
         etTomasAlimen = findViewById(R.id.etTomasAlimen);
-        btInsertarAlimen = findViewById(R.id.btinsertarAlimen);
+        btInsertarAlimen = findViewById(R.id.btInsertarAlimen);
         btBorrar = findViewById(R.id.btBorrar);
         btModificar = findViewById(R.id.btModificar);
 
@@ -84,9 +86,13 @@ public class NuevaAlimentacion extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case (R.id.btinsertarAlimen):
+            case (R.id.btInsertarAlimen):
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar la alimentación?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 //crea la bd
-                dbHelper DbHelper = new dbHelper(this);
+                dbHelper DbHelper = new dbHelper(NuevaAlimentacion.this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
 
                 // Inserta datos
@@ -94,28 +100,42 @@ public class NuevaAlimentacion extends AppCompatActivity implements View.OnClick
                         etTipoAlimen.getText().toString());
 
                 if (id > 0) {
-                    Toast.makeText(this, "Alimentación guardada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NuevaAlimentacion.this, "Alimentación guardada", Toast.LENGTH_LONG).show();
                     limpiar();
                 } else {
-                    Toast.makeText(this, "Error al guardar la alimentación", Toast.LENGTH_LONG).show();
-                }
+                    Toast.makeText(NuevaAlimentacion.this, "Error al guardar la alimentación", Toast.LENGTH_LONG).show();
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
 
             case(R.id.btModificar):
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar los cambios?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 if(!etNombreMascota.getText().toString().equals("") && !etNombreAlimen.getText().toString().equals("")){
                     correcto= DbMascotas.editarAlimentacion(etNombreMascota.getText().toString(), etNombreAlimen.getText().toString(), etCantidadAlimen.getText().toString(), etTomasAlimen.getText().toString(), etTipoAlimen.getText().toString());
 
                     if(correcto){
-                        Toast.makeText(this, "ALIMENTO MODIFICADO", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevaAlimentacion.this, "ALIMENTO MODIFICADO", Toast.LENGTH_LONG).show();
                         verRegistro();
                     }else{
-                        Toast.makeText(this, "ERROR AL MODIFICAR EL ALIMENTO", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevaAlimentacion.this, "ERROR AL MODIFICAR EL ALIMENTO", Toast.LENGTH_LONG).show();
                     }
-                }
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
 
             case(R.id.btBorrar):
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder = new AlertDialog.Builder(this);
                 builder.setMessage("¿Desea eliminar el alimento?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

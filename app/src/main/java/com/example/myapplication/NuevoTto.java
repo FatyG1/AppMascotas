@@ -16,11 +16,13 @@ import android.widget.Toast;
 
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NuevoTto extends AppCompatActivity implements View.OnClickListener {
     private EditText etNombreMascota, etNombreTto, etDosisTto, etFrecuenciaTto, etUsoTto, etDuracionTto;
     private TextView tvNuevoTto;
-    private Button btInsertarTto, btBorrar, btModificar;
+    //private Button btInsertarTto, btBorrar, btModificar;
+    FloatingActionButton btModificar, btBorrar, btInsertarTto;
 
     tratamiento tto;
     String nombreMascota= null;
@@ -87,8 +89,12 @@ public class NuevoTto extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.btInsertarTto):
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar el tratamiento?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 //crea la bd
-                dbHelper DbHelper= new dbHelper(this);
+                dbHelper DbHelper= new dbHelper(NuevoTto.this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
 
                 // Inserta datos
@@ -96,28 +102,42 @@ public class NuevoTto extends AppCompatActivity implements View.OnClickListener 
                         etUsoTto.getText().toString(), etDuracionTto.getText().toString());
 
                 if (id > 0) {
-                    Toast.makeText(this, "Tratamiento guardada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NuevoTto.this, "Tratamiento guardada", Toast.LENGTH_LONG).show();
                     limpiar();
                 } else {
-                    Toast.makeText(this, "Error al guardar la tratamiento", Toast.LENGTH_LONG).show();
-                }
+                    Toast.makeText(NuevoTto.this, "Error al guardar la tratamiento", Toast.LENGTH_LONG).show();
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
             case(R.id.btModificar):
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar los cambios?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 if(!etNombreMascota.getText().toString().equals("") && !etNombreTto.getText().toString().equals("")){
                     correcto= DbMascotas.editarTto(etNombreMascota.getText().toString(), etNombreTto.getText().toString(), etDosisTto.getText().toString(), etFrecuenciaTto.getText().toString(),
                             etUsoTto.getText().toString(), etDuracionTto.getText().toString());
 
                     if(correcto){
-                        Toast.makeText(this, "TRATAMIENTO MODIFICADO", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevoTto.this, "TRATAMIENTO MODIFICADO", Toast.LENGTH_LONG).show();
                         verRegistro();
                     }else{
-                        Toast.makeText(this, "ERROR AL MODIFICAR EL TRATAMIENTO", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevoTto.this, "ERROR AL MODIFICAR EL TRATAMIENTO", Toast.LENGTH_LONG).show();
                     }
-                }
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
 
             case(R.id.btBorrar):
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder = new AlertDialog.Builder(this);
                 builder.setMessage("¿Desea eliminar el tratamiento?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NuevaMascota">
+    android:background="#ACF6B0"
+    tools:context=".NuevaAlimentacion">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,6 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20px"
             android:orientation="vertical">
 
             <TextView
@@ -41,8 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5px"
-                android:inputType="textPersonName"
                 android:hint="Nombre"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -111,6 +114,7 @@
                 android:text="Sexo:"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
             <EditText
                 android:id="@+id/etSexo"
                 android:layout_width="match_parent"
@@ -165,7 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
+                <!--
                 <Button
                     android:id="@+id/btGuardar"
                     android:layout_width="wrap_content"
@@ -178,7 +182,16 @@
                     app:backgroundTint="#5EF165"
                     tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="158dp"
-                    tools:layout_editor_absoluteY="108dp" />
+                    tools:layout_editor_absoluteY="108dp" />-->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btGuardar"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/save"
+                    tools:ignore="SpeakableTextPresentCheck" />
             </LinearLayout>
 
             <LinearLayout
@@ -186,6 +199,7 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
+                <!--
                 <Button
                     android:id="@+id/btModificar"
                     android:layout_width="wrap_content"
@@ -201,7 +215,31 @@
                     tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="158dp"
                     tools:layout_editor_absoluteY="108dp"/>
+-->
 
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btModificar"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="140dp"
+                    android:layout_marginLeft="140dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/edit"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btBorrar"
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/delete"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <!--
                 <Button
                     android:id="@+id/btBorrar"
                     android:layout_width="wrap_content"
@@ -216,7 +254,9 @@
                     app:backgroundTint="#5EF165"
                     tools:ignore="TouchTargetSizeCheck"
                     tools:layout_editor_absoluteX="158dp"
-                    tools:layout_editor_absoluteY="108dp" />
+                    tools:layout_editor_absoluteY="108dp" />-->
+
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

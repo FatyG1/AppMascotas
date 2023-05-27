@@ -15,11 +15,13 @@ import android.widget.Toast;
 
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NuevaVacunacion extends AppCompatActivity implements View.OnClickListener{
     private EditText etNombreMascota, etNombreVac, etFrecuenciaVac, etFechaVac, etFechaProxVac;
     private TextView tvNuevaVac;
-    private Button btInsertarVac, btBorrar, btModificar, btCrearNot;
+    //private Button btInsertarVac, btBorrar, btModificar;
+    FloatingActionButton btModificar, btBorrar, btInsertarVac;
 
     vacunacion vacuna;
     String nombreMascota= null;
@@ -41,12 +43,10 @@ public class NuevaVacunacion extends AppCompatActivity implements View.OnClickLi
         btInsertarVac = findViewById(R.id.btInsertarVac);
         btBorrar = findViewById(R.id.btBorrar);
         btModificar = findViewById(R.id.btModificar);
-        btCrearNot= findViewById(R.id.btCrearNot);
 
         btInsertarVac.setOnClickListener(this);
         btBorrar.setOnClickListener(this);
         btModificar.setOnClickListener(this);
-        btCrearNot.setOnClickListener(this);
 
         btModificar.setVisibility(View.INVISIBLE);
         btBorrar.setVisibility(View.INVISIBLE);
@@ -85,8 +85,12 @@ public class NuevaVacunacion extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.btInsertarVac):
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar la vacuna?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 //crea la bd
-                dbHelper DbHelper= new dbHelper(this);
+                dbHelper DbHelper= new dbHelper(NuevaVacunacion.this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
 
                 // Inserta datos
@@ -94,27 +98,41 @@ public class NuevaVacunacion extends AppCompatActivity implements View.OnClickLi
                         etFechaProxVac.getText().toString());
 
                 if(id>0){
-                    Toast.makeText(this, "Vacuna guardada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NuevaVacunacion.this, "Vacuna guardada", Toast.LENGTH_LONG).show();
                     limpiar();
                 }else{
-                    Toast.makeText(this, "Error al guardar la vacuna", Toast.LENGTH_LONG).show();
-                }
+                    Toast.makeText(NuevaVacunacion.this, "Error al guardar la vacuna", Toast.LENGTH_LONG).show();
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
             case(R.id.btModificar):
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar los cambios?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 if(!etNombreMascota.getText().toString().equals("") && !etNombreVac.getText().toString().equals("")){
                     correcto= DbMascotas.editarVacunacion(etNombreMascota.getText().toString(), etNombreVac.getText().toString(), etFrecuenciaVac.getText().toString(), etFechaVac.getText().toString(), etFechaProxVac.getText().toString());
 
                     if(correcto){
-                        Toast.makeText(this, "VACUNA MODIFICADA", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevaVacunacion.this, "VACUNA MODIFICADA", Toast.LENGTH_LONG).show();
                         verRegistro();
                     }else{
-                        Toast.makeText(this, "ERROR AL MODIFICAR LA VACUNA", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevaVacunacion.this, "ERROR AL MODIFICAR LA VACUNA", Toast.LENGTH_LONG).show();
                     }
-                }
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
 
             case(R.id.btBorrar):
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder = new AlertDialog.Builder(this);
                 builder.setMessage("¿Desea eliminar la vacuna?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -128,10 +146,7 @@ public class NuevaVacunacion extends AppCompatActivity implements View.OnClickLi
                     }
                 }).show();
                 break;
-            case R.id.btCrearNot:
-                Intent intent = new Intent(NuevaVacunacion.this, NuevaNotificacion.class);
-                startActivity(intent);
-                break;
+
         }
         }
 

@@ -15,13 +15,14 @@ import android.widget.Toast;
 
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NuevaDesparasitacion extends AppCompatActivity implements View.OnClickListener{
 
         private EditText etNombreMascota, etNombreDesp, etDosisDesp, etFrecuenciaDesp, etTipoDesp, etFechaDesp, etFechaProxDesp;
         private TextView tvNuevaDesp;
-        private Button btInsertarDesp, btBorrar, btModificar;
-
+        //private Button btInsertarDesp, btBorrar, btModificar;
+        FloatingActionButton btModificar, btBorrar, btInsertarDesp;
     desparasitacion desp;
     String nombreMascota= null;
     String nombreDesp = null;
@@ -89,8 +90,12 @@ public class NuevaDesparasitacion extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.btInsertarDesp):
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar la desparasitación?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 //crea la bd
-                dbHelper DbHelper= new dbHelper(this);
+                dbHelper DbHelper= new dbHelper(NuevaDesparasitacion.this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
 
                 // Inserta datos
@@ -98,27 +103,41 @@ public class NuevaDesparasitacion extends AppCompatActivity implements View.OnCl
                         etTipoDesp.getText().toString(), etFechaDesp.getText().toString(), etFechaProxDesp.getText().toString());
 
                 if (id > 0) {
-                    Toast.makeText(this, "Desparasitación guardada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NuevaDesparasitacion.this, "Desparasitación guardada", Toast.LENGTH_LONG).show();
                     limpiar();
                 } else {
-                    Toast.makeText(this, "Error al guardar la desparasitación", Toast.LENGTH_LONG).show();
-                }
+                    Toast.makeText(NuevaDesparasitacion.this, "Error al guardar la desparasitación", Toast.LENGTH_LONG).show();
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
             case(R.id.btModificar):
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar los cambios?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 if(!etNombreMascota.getText().toString().equals("") && !etNombreDesp.getText().toString().equals("")){
                     correcto= DbMascotas.editarDesparasitacion(etNombreMascota.getText().toString(), etNombreDesp.getText().toString(), etDosisDesp.getText().toString(), etFrecuenciaDesp.getText().toString(), etTipoDesp.getText().toString(), etFechaDesp.getText().toString(), etFechaProxDesp.getText().toString());
 
                     if(correcto){
-                        Toast.makeText(this, "DESPARASITACIÓN MODIFICADA", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevaDesparasitacion.this, "DESPARASITACIÓN MODIFICADA", Toast.LENGTH_LONG).show();
                         verRegistro();
                     }else{
-                        Toast.makeText(this, "ERROR AL MODIFICAR LA DESPARASITACIÓN", Toast.LENGTH_LONG).show();
+                        Toast.makeText(NuevaDesparasitacion.this, "ERROR AL MODIFICAR LA DESPARASITACIÓN", Toast.LENGTH_LONG).show();
                     }
-                }
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
 
             case(R.id.btBorrar):
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder = new AlertDialog.Builder(this);
                 builder.setMessage("¿Desea eliminar la desparasitación?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

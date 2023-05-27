@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btDesparasitacion = findViewById(R.id.btDesparasitacion);
         btTto = findViewById(R.id.brTto);
         btAlimentacion = findViewById(R.id.btAlimentacion);
-        btHistorial = findViewById(R.id.btHistorial);
-        btMivet = findViewById(R.id.btMiVet);
+        /*btHistorial = findViewById(R.id.btHistorial);
+        btMivet = findViewById(R.id.btMiVet);*/
 
         btMiMascota.setOnClickListener(this);
         btVacunacion.setOnClickListener(this);
@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btTto.setOnClickListener(this);
         btAlimentacion.setOnClickListener(this);
 
-        btHistorial.setVisibility(View.INVISIBLE);
-        btMivet.setVisibility(View.INVISIBLE);
+       /* btHistorial.setVisibility(View.INVISIBLE);
+        btMivet.setVisibility(View.INVISIBLE);*/
         }
     @Override
     public void onClick(View view) {

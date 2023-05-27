@@ -5,28 +5,36 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication.db.dbHelper;
 import com.example.myapplication.db.dbMascota;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.UUID;
 
 public class NuevaMascota extends AppCompatActivity  implements View.OnClickListener {
+
     private EditText etNombre, etChip, etEdad, etRaza, etPeso, etSexo, etEsterilizado;
     private TextView tvNuevaMascota;
-    private Button btGuardar, btBorrar, btModificar;
+    //private Button btGuardar, btBorrar;
+    FloatingActionButton btModificar, btBorrar, btGuardar;
 
     miMascota mascota;
-    String nombre= null;
-    boolean correcto =false;
+    String nombre = null;
+    boolean correcto = false;
 
     dbMascota DbMascotas = new dbMascota(this);
 
@@ -54,20 +62,20 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
         btModificar.setVisibility(View.INVISIBLE);
         btBorrar.setVisibility(View.INVISIBLE);
 
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
-            if(extras == null){
+            if (extras == null) {
                 nombre = null;
-            }else {
+            } else {
                 nombre = extras.getString("NOMBRE");
             }
-        }else{
+        } else {
             nombre = (String) savedInstanceState.getSerializable("NOMBRE");
         }
         dbMascota DBMascota = new dbMascota(NuevaMascota.this);
         mascota = DBMascota.verMascotas(nombre);
 
-        if(mascota != null){
+        if (mascota != null) {
             etNombre.setText(mascota.getNombre());
             etChip.setText(mascota.getChip());
             etEdad.setText(mascota.getEdad());
@@ -86,42 +94,60 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.btGuardar):
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar la mascota?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                 //crea la bd
-                dbHelper DbHelper= new dbHelper(this);
+                dbHelper DbHelper = new dbHelper(NuevaMascota.this);
                 SQLiteDatabase db = DbHelper.getWritableDatabase();
-
                 // Inserta datos
-                long id= DbMascotas.insertarMascota(etNombre.getText().toString(), etChip.getText().toString(), etEdad.getText().toString(),
+                long id = DbMascotas.insertarMascota(etNombre.getText().toString(), etChip.getText().toString(), etEdad.getText().toString(),
                         etRaza.getText().toString(), etPeso.getText().toString(), etSexo.getText().toString(), etEsterilizado.getText().toString());
 
-                if(id>0){
-                    Toast.makeText(this, "Mascota guardada", Toast.LENGTH_LONG).show();
+                if (id > 0) {
+                    Toast.makeText(NuevaMascota.this, "Mascota guardada", Toast.LENGTH_LONG).show();
                     limpiar();
-                }else{
-                    Toast.makeText(this, "Error al guardar la mascota", Toast.LENGTH_LONG).show();
-                }
+                } else {
+                    Toast.makeText(NuevaMascota.this, "Error al guardar la mascota", Toast.LENGTH_LONG).show();
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
 
-            case(R.id.btModificar):
-                if(!etNombre.getText().toString().equals("")){
-                    correcto= DbMascotas.editarMascota(etNombre.getText().toString(), etChip.getText().toString(), etEdad.getText().toString(), etRaza.getText().toString(), etPeso.getText().toString(), etEsterilizado.getText().toString(), etSexo.getText().toString());
-                    if(correcto){
+            case (R.id.btModificar):
+                builder = new AlertDialog.Builder(this);
+                builder.setMessage("¿Desea guardar los cambios?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    if (!etNombre.getText().toString().equals("")) {
+                    correcto = DbMascotas.editarMascota(etNombre.getText().toString(), etChip.getText().toString(), etEdad.getText().toString(), etRaza.getText().toString(), etPeso.getText().toString(), etEsterilizado.getText().toString(), etSexo.getText().toString());
+                    if (correcto) {
                         Toast.makeText(NuevaMascota.this, "MASCOTA MODIFICADA", Toast.LENGTH_LONG).show();
                         verRegistro();
-                    }else{
+                    } else {
                         Toast.makeText(NuevaMascota.this, "ERROR AL MODIFICAR LA MASCOTA", Toast.LENGTH_LONG).show();
                     }
-                }
+                }}
+                }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                }).show();
                 break;
 
-            case(R.id.btBorrar):
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            case (R.id.btBorrar):
+                 builder = new AlertDialog.Builder(this);
                 builder.setMessage("¿Desea eliminar la mascota?").setPositiveButton("SI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                       if(DbMascotas.borrarMascota(nombre)){
+                        if (DbMascotas.borrarMascota(nombre)) {
                             verRegistro();
-                       }
+                        }
                     }
                 }).setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
@@ -129,10 +155,10 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
                     }
                 }).show();
                 break;
-            }
         }
+    }
 
-    private void limpiar(){
+    private void limpiar() {
         etChip.setText("");
         etNombre.setText("");
         etEdad.setText("");
@@ -141,9 +167,9 @@ public class NuevaMascota extends AppCompatActivity  implements View.OnClickList
         etEsterilizado.setText("");
         etPeso.setText("");
     }
-    public void verRegistro(){
-        Intent intent = new Intent(this, miMascota.class );
+
+    public void verRegistro() {
+        Intent intent = new Intent(this, miMascota.class);
         startActivity(intent);
     }
-
 }

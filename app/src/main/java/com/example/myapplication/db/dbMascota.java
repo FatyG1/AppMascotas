@@ -145,8 +145,8 @@ public class dbMascota extends dbHelper {
                 mascota.setChip(cursorMascotas.getString(1));
                 mascota.setEdad(cursorMascotas.getString(2));
                 mascota.setRaza(cursorMascotas.getString(4));
-                mascota.setSexo(cursorMascotas.getString(5));
-                mascota.setEsterilizado(cursorMascotas.getString(6));
+                mascota.setSexo(cursorMascotas.getString(6));
+                mascota.setEsterilizado(cursorMascotas.getString(5));
                 mascota.setPeso(cursorMascotas.getString(3));
 
 
@@ -296,8 +296,8 @@ public class dbMascota extends dbHelper {
                 mascota.setChip(cursorMascotas.getString(1));
                 mascota.setEdad(cursorMascotas.getString(2));
                 mascota.setRaza(cursorMascotas.getString(4));
-                mascota.setSexo(cursorMascotas.getString(5));
-                mascota.setEsterilizado(cursorMascotas.getString(6));
+                mascota.setSexo(cursorMascotas.getString(6));
+                mascota.setEsterilizado(cursorMascotas.getString(5));
                 mascota.setPeso(cursorMascotas.getString(3));
             }
 

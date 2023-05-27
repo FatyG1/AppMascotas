@@ -4,19 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#ACF6B0"
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/white"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="0dp"
+            android:background="#ACF6B0"
             android:orientation="vertical">
 
             <TextView
@@ -26,7 +29,7 @@
                 android:background="#94F129"
                 android:fontFamily="cursive"
                 android:gravity="center"
-                android:text="@string/app_mascotas"
+                android:text="MIS MASCOTAS"
                 android:textColor="#673AB7"
                 android:textSize="45sp"
                 android:textStyle="bold" />
@@ -37,10 +40,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="70px"
-                android:text="Mi mascota"
+                android:text="Mascotas"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
-                app:backgroundTint="#5EF165"
+                app:backgroundTint="#D2E2EA"
+                app:icon="@drawable/pet"
+                app:iconPadding="15dp"
                 tools:ignore="TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="158dp"
                 tools:layout_editor_absoluteY="108dp" />
@@ -54,7 +59,9 @@
                 android:text="@string/vacunaci_n"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
-                app:backgroundTint="#5EF165" />
+                app:backgroundTint="#94F129"
+                app:icon="@drawable/vac"
+                app:iconPadding="15dp" />
 
             <Button
                 android:id="@+id/btDesparasitacion"
@@ -65,7 +72,9 @@
                 android:text="@string/desparasitaci_n"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
-                app:backgroundTint="#5EF165" />
+                app:backgroundTint="#94F129"
+                app:icon="@drawable/ic_baseline_bug_report_24"
+                app:iconPadding="15dp" />
 
             <Button
                 android:id="@+id/brTto"
@@ -76,7 +85,9 @@
                 android:text="@string/tratamiento"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
-                app:backgroundTint="#5EF165" />
+                app:backgroundTint="#94F129"
+                app:icon="@drawable/ic_baseline_medical_services_24"
+                app:iconPadding="15dp" />
 
             <Button
                 android:id="@+id/btAlimentacion"
@@ -87,9 +98,11 @@
                 android:text="ALIMENTACIÓN"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
-                app:backgroundTint="#5EF165" />
+                app:backgroundTint="#94F129"
+                app:icon="@drawable/ic_baseline_flatware_24"
+                app:iconPadding="15dp" />
 
-            <Button
+            <!--<Button
                 android:id="@+id/btHistorial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -109,7 +122,17 @@
                 android:text="@string/mi_veterinario"
                 android:textColor="#BD1CD8"
                 android:textSize="24sp"
-                app:backgroundTint="#5EF165" />
+                app:backgroundTint="#5EF165" />-->
+            <ImageView
+                android:id="@+id/imageView"
+
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/pet" />
 
         </LinearLayout>
     </ScrollView>
